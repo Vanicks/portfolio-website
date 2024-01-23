@@ -12,8 +12,7 @@ export default function AboutMe() {
           </p>
           <p className='mb-6'>
             I'm into cars, which influenced my choice of the automotive strand in senior high school.
-            After I graduated I began my dual study at Netgo GmbH where I work and Westfälische 
-            Hochschule where I study.
+            After I graduated I plan to focus more on learning algorithms and data structures.
           </p>
           <p className='mb-6'>
             I'm currently learning Python and Algorithims but my favorite language is Typescript. In 
