@@ -8,7 +8,7 @@ export default function RepoCard({ project }: { project: Project }) {
     <div className='p-4 bg-sh-dark-500 border-2 border-sh-dark rounded-lg text-sh-white hover:shadow-lg transition-transform transform ease-in hover:scale-[1.02]'>
       <article className='flex flex-col justify-between h-[7.5rem]'>
         <header className='flex justify-between items-center mb-2'>
-          <Link href='/test' target='_blank' rel='noopener noreferrer' className='text-lg font-bold inline-block text-sh-blue hover:text-sh-blue-500 transition ease-in'>
+          <Link href={project.url} target='_blank' rel='noopener noreferrer' className='text-lg font-bold inline-block text-sh-blue hover:text-sh-blue-500 transition ease-in'>
             {project.name}
           </Link>
           <div className='flex items-center gap-2 cursor-default'>
