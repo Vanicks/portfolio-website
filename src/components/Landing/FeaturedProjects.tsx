@@ -5,18 +5,18 @@ import RepoCard from './FeaturedProjects/RepoCard';
 const projects = [
   {
     name: 'Saber-Chan',
-    description: 'A multipurpose discord-bot made with typescript and sapphirejs',
-    tags: ['nextjs', 'typescript', 'bot'],
-    repoLink: 'https://github.com/',
-    url: 'https://paul.is-a.dev',
+    description: 'An advance discord-bot made with typescript and sapphirejs',
+    tags: ['sapphirejs', 'typescript', 'discord-bot'],
+    repoLink: 'https://github.com/NotKaskus/saber-chan',
+    url: 'https://saber-chan.com',
     starGazerCount: 100,
     forkCount: 68
   },
   {
-    name: 'Saber-Chan',
-    description: 'A multipurpose discord-bot made with typescript and sapphirejs',
-    tags: ['nextjs', 'typescript', 'bot'],
-    repoLink: 'https://github.com/',
+    name: 'notkaskus.github.io',
+    description: 'My personal website made iwht nextjs and tailwindcss',
+    tags: ['nextjs', 'tailwindcss', 'typescript'],
+    repoLink: 'https://github.com/NotKaskus/notkaskus.github.io',
     url: 'https://paul.is-a.dev',
     starGazerCount: 24,
     forkCount: 10
