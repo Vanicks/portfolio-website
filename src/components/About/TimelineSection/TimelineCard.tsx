@@ -2,7 +2,7 @@ import React from 'react';
 
 
 export default function TimelineCard({ timespan, title, description, current, icon, company }: Props) {
-  return ( // TODO: Damn boy fix the styling for mobiles: https://github.com/IgorKowalczyk/igorkowalczyk.github.io/blob/master/app/blog/page.jsx
+  return (
     <> 
       <li className="-mt-3 mb-10 ml-6 rounded-2xl border px-6 py-3 duration-200 hover:bg-gray-200/50 motion-reduce:transition-none dark:border-neutral-800 dark:bg-[#606070] dark:hover:border-neutral-700 dark:hover:bg-[#202021]">            
         <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
@@ -27,7 +27,7 @@ export default function TimelineCard({ timespan, title, description, current, ic
             <h4 className='text-sm font-medium text-gray-400'>{timespan}</h4>
           </div>
         </div>
-        <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{description}</p>
+        <p className="mb-4 text-base font-normal text-[#1e2024] dark:text-[#dadde7]">{description}</p>
       </li>
     </>
   )
