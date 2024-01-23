@@ -9,8 +9,8 @@ const projects = [
     tags: ['sapphirejs', 'typescript', 'discord-bot'],
     repoLink: 'https://github.com/NotKaskus/saber-chan',
     url: 'https://saber-chan.com',
-    starGazerCount: 100,
-    forkCount: 68
+    starGazerCount: 0,
+    forkCount: 0
   },
   {
     name: 'notkaskus.github.io',
@@ -18,8 +18,8 @@ const projects = [
     tags: ['nextjs', 'tailwindcss', 'typescript'],
     repoLink: 'https://github.com/NotKaskus/notkaskus.github.io',
     url: 'https://paul.is-a.dev',
-    starGazerCount: 24,
-    forkCount: 10
+    starGazerCount: 0,
+    forkCount: 0
   }
 ]
 
