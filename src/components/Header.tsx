@@ -6,12 +6,10 @@ import NewMobileNav from './Nav/NewMobileNav';
 import { buttonVariants } from "./ui/button"
 import { cn } from "@/lib/utils"
 import ThemeToggler from "./ThemeToggler";
+import { meta } from '@/lib/config'
 
 export default function Header() {
   return (
-    // <header className='py-4 sm:py-8'>
-    //   <NewNav />
-    // </header>
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-[73px] max-w-screen-2xl items-center">
         <NewNav />
@@ -20,7 +18,7 @@ export default function Header() {
           <div className="w-full flex-1 md:w-auto md:flex-none" />
           <nav className="flex items-center">
             <Link
-              href='/test'
+              href={meta.accounts.github.username}
               target="_blank"
               rel="noreferrer"
             >
@@ -37,7 +35,7 @@ export default function Header() {
               </div>
             </Link>
             <Link
-              href='/test'
+              href={meta.accounts.twitter.username}
               target="_blank"
               rel="noreferrer"
             >
