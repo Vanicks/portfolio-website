@@ -46,7 +46,7 @@
     "rehype-pretty-code": "^0.12.5",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.0",
-    "sharp": "^0.33.2",
+    "sharp": "^0.33.1",
     "shikiji": "^0.10.0-beta.9",
     "tailwind-merge": "^2.2.0",
     "tailwindcss-animate": "^1.0.7",
@@ -85,7 +85,8 @@
     "lint-staged": "^15.2.0",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "typescript": "^5.3.3",
+    "vercel": "^33.2.0"
   },
   "config": {
     "commitizen": {
