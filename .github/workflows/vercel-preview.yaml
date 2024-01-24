@@ -35,8 +35,3 @@ jobs:
         - name: Deploy Preview
           id: deploy
           run: echo preview_url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}) >> $GITHUB_OUTPUT
-        - name: Comment on Push Request
-          uses: thollander/actions-comment-pull-request@v2
-          with:
-            message: |
-              Vercel Preview URL :rocket: : ${{ steps.deploy.outputs.preview_url }}
