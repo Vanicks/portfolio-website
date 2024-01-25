@@ -28,7 +28,7 @@ export const meta = {
 };
 
 export const header = {
-  title: "Igor Kowalczyk",
+  title: "Paul Andrew",
   subtitle: "Full-stack developer",
   description: meta.description,
   code: {
