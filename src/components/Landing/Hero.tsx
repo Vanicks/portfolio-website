@@ -5,11 +5,11 @@ export default function Hero() {
   return (
     <div className='flex flex-col md:flex-row justify-between w-full gap-8'>
       <div className='flex flex-col gap-4 flex-grow-0 max-w-[44rem] text-xl leading-8'>
-        <h1 className="text-6xl md:text-5xl lg:text-7xl font-extrabold leading-none text-primary mb-2">
+        <h1 className="text-6xl md:text-5xl lg:text-7xl font-black text-primary mb-2">
           Hi, I'm Paul.
         </h1>
 
-        <div className="text-muted-foreground flex flex-col gap-4">
+        <div className="text-[#3f424a] dark:text-[#acb2c9] flex flex-col gap-4">
           <p>
             I&apos;m 17 year old second-year senior highschool student and self-taught developer 
             from Philippines. I mainly focused on the field of backend development and cybersecurity.
