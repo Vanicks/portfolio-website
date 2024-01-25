@@ -12,7 +12,6 @@ export const meta = {
   accounts: {
    github: {
     username: "NotKaskus",
-    repo: "NotKaskus.github.io",
    },
    twitter: {
     username: "TrueKaskus",
