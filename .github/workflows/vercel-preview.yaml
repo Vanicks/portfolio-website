@@ -9,7 +9,7 @@ on:
     paths-ignore:
       - '.github/**'
     branches:
-      - deveploment
+      - development
 
 jobs:
     deploy-preview:
