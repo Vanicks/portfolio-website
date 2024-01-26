@@ -14,10 +14,10 @@ export default function WatchListCard({ animeInfo }: { animeInfo: FavAnimeInfo }
               alt="Anime cover image for current watchlist" 
               sizes="" 
               loading="lazy" 
-              width="500" 
-              height="750" 
+              width={500} 
+              height={750} 
               decoding="async" 
-              className="z-2 w-full h-full object-cover aspect-[2/3] opacity-100 outline outline-1 outline-body-800" 
+              className="z-2 w-full h-full object-cover aspect-[2/3] opacity-100 outline outline-1 outline-body-800"
             />
             <div className="opacity-0 group-hover:opacity-100 duration-300 absolute left-0 bottom-0 right-0 z-10 flex justify-center items-end text-sm bg-gray-200 text-black font-semibold">{animeInfo.title}</div>
           </div>
