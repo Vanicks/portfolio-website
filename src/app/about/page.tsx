@@ -1,4 +1,3 @@
-import React from 'react';
 import AboutMe from '@/components/About/AboutMe';
 import Timeline from '@/components/About/Timeline';
 import TechStack from '@/components/About/TechStack';
