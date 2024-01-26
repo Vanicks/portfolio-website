@@ -7,6 +7,7 @@ export default function AboutMeBanner() {
           src='/about_me_banner.webp' 
           width='3392'
           height='1080'
+          sizes="(min-width: 1360px) 1200px, calc(92.69vw - 42px)"
           alt='About Me Banner'
           loading='eager'
           decoding='async'
