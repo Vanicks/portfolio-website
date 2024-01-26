@@ -1,14 +1,16 @@
-import React from 'react';
 import Link from 'next/link';
 import { sub } from "date-fns/sub";
 import { FaRss } from "react-icons/fa6";
 import { allBlogs, type Blog } from 'contentlayer/generated';
+import { useMemo } from 'react';
 
 import SectionHeader from '../SectionHeader';
 import SmallBlogCard from './RecentPost/SmallBlogCard';
 
 export default async function RecentPost() {
   const recentArticles = allBlogs.slice(0, 5);
+  const isNewDates = useMemo(() => recentArticles.map(post => sub(new Date(), { days: 30 }) < new Date(post.publishedAt)), [recentArticles]);
+
   return (
     <>
       <SectionHeader title='Recent Posts'>
@@ -19,11 +21,9 @@ export default async function RecentPost() {
       </SectionHeader>
       <div className='flex flex-col gap-3'>
         {recentArticles.map((post: Blog, index: number) => {
-          const isNew = sub(new Date(), { days: 30 }) < new Date(post.publishedAt);
-
           return (
             <div key={index} className='post'>
-              <SmallBlogCard data={post} isNew={isNew} />
+              <SmallBlogCard data={post} isNew={isNewDates[index]} />
             </div>
           )
         })}
