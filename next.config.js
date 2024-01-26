@@ -42,6 +42,12 @@ module.exports = bundleWithAnalyzer(
             port: '',
             pathname: '/**',
           },
+          {
+            protocol: 'https',
+            hostname: 'dev.virtualearth.net',
+            port: '',
+            pathname: '/**',
+          },
         ],
       },
 
