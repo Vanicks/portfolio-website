@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function TimelineCard({ timespan, title, description, current, icon, company }: Props) {
   return (
     <> 
@@ -8,18 +10,17 @@ export default function TimelineCard({ timespan, title, description, current, ic
           </svg>
         </span>
         <div className='w-full flex gap-3'>
-          <img
+          <Image
             src={icon}
             className='h-[60px] hidden border-black rounded-[10px] mt-[4px] sm:block'
-            loading='eager'
+            height={60}
+            width={60}
+            alt='Card Title'
+            loading='lazy'
             decoding='async'
           />
           <div className='w-full flex flex-col mb-1'>
-            { 
-              current 
-                ? <h3 className="flex items-center text-lg lg:text-xl font-semibold text-gray-900 dark:text-white">{title}<span className="ml-3 mr-2 hidden rounded bg-blue-200 py-0.5 pl-1.5 pr-2.5 text-sm font-medium dark:bg-white/10 sm:block">Current</span></h3>
-                : <h3 className="flex items-center text-lg lg:text-xl font-semibold text-gray-900 dark:text-white">{title}</h3>
-            }
+            <h3 className="flex items-center text-lg lg:text-xl font-semibold text-gray-900 dark:text-white">{title}{current && <span className="ml-3 mr-2 hidden rounded bg-blue-200 py-0.5 pl-1.5 pr-2.5 text-sm font-medium dark:bg-white/10 sm:block">Current</span>}</h3>
             <h3 className='font-medium text-md text-gray-500'>{company}</h3>
             <h4 className='text-sm font-medium text-gray-400'>{timespan}</h4>
           </div>
