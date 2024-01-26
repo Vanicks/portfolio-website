@@ -1,5 +1,5 @@
-import AniList,  type {ListEntry } from 'anilist-node';
-const anilist = new AniList(process.env.ANILIST_API_KEY)
+import AniList, { type ListEntry } from 'anilist-node';
+const anilist = new AniList(process.env.ANILIST_API_KEY);
 
 async function getUserFavorite(): Promise<ListEntry[]> {
   const profile = await anilist.lists.anime(5318187);
