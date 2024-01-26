@@ -1,4 +1,3 @@
-import React from 'react';
 import RecentPost from '@/components/Landing/RecentPost';
 
 export default function Blogs() {
