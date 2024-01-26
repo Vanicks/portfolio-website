@@ -1,4 +1,4 @@
-import React from 'react';
+import type { JSX } from 'react';
 import { FaGithub, FaRust } from "react-icons/fa6";
 import { VscTerminalBash } from "react-icons/vsc";
 
@@ -176,5 +176,5 @@ export default function TeachIcons() {
 
 type Stack = {
   name: string;
-  icon: React.JSX.Element;
+  icon: JSX.Element;
 }
