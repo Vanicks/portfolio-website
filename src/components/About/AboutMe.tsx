@@ -1,6 +1,3 @@
-import React from 'react';
-import SectionHeader from '../SectionHeader';
-
 export default function AboutMe() {
   return (
       <div className='leading-5'>
