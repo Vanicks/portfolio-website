@@ -1,7 +1,4 @@
-import React from 'react';
-import SectionHeader from '../SectionHeader';
 import TeachIcons from './TechstackSection/TeachIcons';
-
 
 export default function TechStack() {
   return (
