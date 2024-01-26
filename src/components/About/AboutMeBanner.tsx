@@ -1,7 +1,9 @@
+import Image from 'next/image';
+
 export default function AboutMeBanner() {
   return (
     <>
-        <img 
+        <Image 
           src='/about_me_banner.webp' 
           width='3392'
           height='1080'
