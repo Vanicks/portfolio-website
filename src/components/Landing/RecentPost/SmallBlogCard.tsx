@@ -1,13 +1,16 @@
 'use client';
 
 import type { Blog } from 'contentlayer/generated';
-import React from 'react'
+import { useMemo, memo } from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
 import { formatDistance } from 'date-fns';
 import readingTime from "reading-time";
 
-export default function SmallBlogCard({ data, isNew }: CardOptions) {
+function SmallBlogCard({ data, isNew }: CardOptions) {
+  const readingTimeText = useMemo(() => readingTime(data.body.raw, { wordsPerMinute: 150 }).text, [data.body.raw]);
+  const formattedDistance = useMemo(() => formatDistance(new Date(data.publishedAt), new Date(), { addSuffix: true }), [data.publishedAt]);
+
   return (
     <Link href={`/blogs/${data.slugAsParams}`} rel="prefetch" className='flex group @container h-full transition-transform duration-300 transform-gpu rounded border bg-background'>
       <div className='flex flex-row flex-1 relative h-full'>
@@ -20,18 +23,18 @@ export default function SmallBlogCard({ data, isNew }: CardOptions) {
               {data.description}
             </p>
             <time className="text-xs text-primary leading-3" dateTime={String(new Date(data.publishedAt))}>
-              Posted {formatDistance(new Date(data.publishedAt), new Date(), { addSuffix: true })}
+              Posted {formattedDistance}
             </time>
           </div>
           <hr className="w-full article-bottom-border h-[1px]" />
           <ul className="flex px-4 py-2 gap-2 flex-wrap text-xs text-primary">
             <div className="text-primary">
-                {readingTime(data.body.raw, { wordsPerMinute: 150 }).text}
+                {readingTimeText}
             </div>
             <div className="h-full w-[1px] mr-1">
               <span>|</span>
             </div>
-            {data.tags.map((tag, index) => <div key={index} className="pr-2">{tag}</div>)}
+            {data.tags.map((tag) => <div key={tag} className="pr-2">{tag}</div>)}
           </ul>
         </div>
         {
@@ -65,3 +68,5 @@ interface CardOptions {
   data: Blog;
   isNew: Boolean;
 }
+
+export default memo(SmallBlogCard);
