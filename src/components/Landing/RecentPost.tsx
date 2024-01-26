@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { sub } from "date-fns";
+import { sub } from "date-fns/sub";
 import { FaRss } from "react-icons/fa6";
 import { allBlogs, type Blog } from 'contentlayer/generated';
 
