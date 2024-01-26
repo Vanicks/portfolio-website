@@ -1,4 +1,3 @@
-import React from 'react';
 import TimelineCard from './TimelineSection/TimelineCard';
 import { FaGraduationCap, FaBriefcase } from "react-icons/fa6";
 
