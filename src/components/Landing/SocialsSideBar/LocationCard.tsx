@@ -1,16 +1,16 @@
 'use client'
 
-import React from 'react';
-
+import Image from 'next/image';
 
 export default function LocationCard() {
   return (
     <div className='group relative flex h-full min-h-[13rem] flex-shrink-0 overflow-hidden rounded-xl'>
-      <img 
+      <Image 
         alt="A map locating roughly where I am right now"
         src={`https://dev.virtualearth.net/REST/V1/Imagery/Map/CanvasLight/42.6564%2C-73.7638/13?mapSize=600%2C300&format=png&key=${process.env.BING_STATIC_MAP_API_KEY}`} 
         loading='lazy'
         className='absolute inset-0 h-full w-full scale-[1.25] bg-black object-cover object-center' 
+        fill
       />
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
@@ -18,7 +18,7 @@ export default function LocationCard() {
 				<div aria-hidden className="absolute translate-y-[14px]">
 					<span className="block h-12 w-12 animate-ping rounded-full bg-lime-500 duration-1000" />
 				</div>
-				<img
+				<Image
 					src='/avatar.webp' 
 					alt="Photo of me above a map of my current location"
           loading='lazy'
@@ -27,7 +27,7 @@ export default function LocationCard() {
 					className="h-15 w-15 z-20 rounded-full border-2 border-black transition-transform duration-500 group-hover:-rotate-[10deg] group-hover:scale-110"
 				/>
 				<p className="rounded-full bg-white/10 pl-2.5 pr-3 font-bold text-white/95 backdrop-blur-md">
-					📍 Naga City
+					📍 Naga Cityclear
 				</p>
 			</div>
     </div>
