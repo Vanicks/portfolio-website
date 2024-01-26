@@ -55,7 +55,7 @@ export const Blog = defineDocumentType(() => ({
     banner: {
       type: 'string',
       description: 'The banner image of the post',
-      required: false
+      required: true
     }
   },
   computedFields
