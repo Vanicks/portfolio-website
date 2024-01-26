@@ -14,6 +14,7 @@ on:
       
 jobs:
   deploy-production:
+    if: github.event.pull_request.merged == true
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
