@@ -1,9 +1,8 @@
-import React from 'react';
 import WatchListCard from './AnimeWatchList/WatchListCard';
 import { getFavAnimeBanner, type FavAnimeInfo } from '@/lib/anime';
 
 export default async function AnimeWatchList() {
-  const favAnimeCoerImages = await getFavAnimeBanner();
+  const favAnimeCoverImages = await getFavAnimeBanner();
   return (
     <div className='flex flex-col gap-4'>
       <div className='flex justify-between items-center flex-wrap gap-2'>
@@ -11,7 +10,7 @@ export default async function AnimeWatchList() {
       </div>
       <div className='grid gap-4 book-grid'>
         {
-          favAnimeCoerImages.map((favAnimeInfo: FavAnimeInfo, index: number) => {
+          favAnimeCoverImages.map((favAnimeInfo: FavAnimeInfo, index: number) => {
             return <WatchListCard animeInfo={favAnimeInfo} key={index} />
           })
         }
