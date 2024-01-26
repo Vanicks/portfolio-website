@@ -39,7 +39,9 @@ export default function Hero() {
           src='/avatar.webp'
           width={400}
           height={400}
-          sizes=""
+          loading='eager'
+          priority
+          sizes="(min-width: 1040px) 390px, (min-width: 380px) 300px, calc(53.33vw + 108px)"
         />
       </div>
     </div>
