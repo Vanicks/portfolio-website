@@ -1,6 +1,3 @@
-import React from 'react';
-
-
 export default function TimelineCard({ timespan, title, description, current, icon, company }: Props) {
   return (
     <> 
