@@ -8,7 +8,7 @@ export default async function PostHeader({ content }: { content: Blog }) {
   const imageSrc = await processImage({
     slug: content.slugAsParams, 
     banner: content.banner 
-  })
+  });
 
   return (
     <>
