@@ -1,13 +1,6 @@
 import isEmail from "validator/lib/isEmail";
-import type { NextApiRequest, NextApiResponse } from 'next'
 
 export const runtime = "edge";
-
-type PostRequest = {
-  email: string;
-  name: string;
-  message: string;
-}
 
 export async function POST(request: Request) {
  const { email, name, message } = await request.clone().json();
