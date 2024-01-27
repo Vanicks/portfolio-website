@@ -1,9 +1,26 @@
-import React from 'react';
-import { format, parseISO } from 'date-fns';
+import { cache } from 'react';
+import type { Metadata } from 'next';
 import { getMDXComponent } from 'next-contentlayer/hooks';
 import { type Blog, allBlogs } from 'contentlayer/generated';
+
 import PostHeader from '@/components/Blogs/Blog/PostHeader';
 import { notFound } from 'next/navigation';
+
+export async function generateMetadata({ params }: BlogPageParams): Promise<Metadata> {
+  const blog = await getBlogFromParams(params.slug);
+  
+  return {
+    title: blog?.title,
+    description: blog?.description,
+    openGraph: {
+      images: [`/blogs/${blog.slugAsParams}/images/banner.png`],
+      type: 'article'
+    },
+    twitter: {
+      images: [`/blogs/${blog.slugAsParams}/images/banner.png`],
+    },
+  }
+} 
 
 export async function generateStaticParams() {
   const blogs = allBlogs;
@@ -13,14 +30,14 @@ export async function generateStaticParams() {
   }));
 }
 
-async function getBlogFromParams(slug: string): Promise<Blog> {
+const getBlogFromParams = cache(async (slug: string): Promise<Blog> => {
   const blog = allBlogs.find((blog) => blog.slugAsParams === slug);
 
   if (!blog)
     notFound();
   
   return blog;
-}
+});
 
 export default async function BlogPage({ params }: BlogPageParams) {
   const blog = await getBlogFromParams(params.slug);
