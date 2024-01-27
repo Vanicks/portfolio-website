@@ -1,8 +1,22 @@
+import type { Metadata } from 'next';
+
 import AboutMe from '@/components/About/AboutMe';
 import Timeline from '@/components/About/Timeline';
 import TechStack from '@/components/About/TechStack';
 import AnimeWatchList from '@/components/About/AnimeWatchList';
 import AboutMeBanner from '@/components/About/AboutMeBanner';
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: 'About',
+    openGraph: {
+      images: [`/api/og?title=About`],
+    },
+    twitter: {
+      images: [`/api/og?title=About`],
+    },
+  }
+}
 
 export default function About() {
   return (

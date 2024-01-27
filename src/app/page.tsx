@@ -1,7 +1,20 @@
+import type { Metadata } from 'next';
+
 import Hero from '@/components/Landing/Hero';
 import RecentPost from '@/components/Landing/RecentPost';
 import FeaturedProjects from '@/components/Landing/FeaturedProjects';
 import SocialsSideBar from '@/components/Landing/SocialsSideBar';
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    openGraph: {
+      images: [`/api/og?title=Home`],
+    },
+    twitter: {
+      images: [`/api/og?title=Home`],
+    },
+  }
+}
 
 export default function Home() {
   return (

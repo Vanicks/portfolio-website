@@ -1,8 +1,20 @@
-import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { contact } from '@/lib/config';
 import Contact from '@/components/Contact';
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: 'Contact',
+    openGraph: {
+      images: [`/api/og?title=Contact`],
+    },
+    twitter: {
+      images: [`/api/og?title=Contact`],
+    },
+  }
+}
 
 export default function page() {
   return (

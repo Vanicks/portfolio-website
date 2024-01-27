@@ -1,4 +1,18 @@
+import type { Metadata } from 'next';
+
 import RecentPost from '@/components/Landing/RecentPost';
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: 'Blogs',
+    openGraph: {
+      images: [`/api/og?title=Blogs`],
+    },
+    twitter: {
+      images: [`/api/og?title=Blogs`],
+    },
+  }
+}
 
 export default function Blogs() {
   return (
