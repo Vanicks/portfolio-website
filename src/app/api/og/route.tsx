@@ -58,7 +58,7 @@ export async function GET(req: NextRequest) {
               {meta.author}
             </p>
             <img
-              src={`https://alexanderkonietzko.vercel.app/static/images/konietzko_alexander.png`}
+              src={`/avatar.webp`}
               alt={meta.siteName}
               style={{
                 width: '5em',
