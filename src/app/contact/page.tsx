@@ -1,7 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import { MdEmail } from "react-icons/md";
-import { FaDiscord, FaTwitter, FaInstagram   } from "react-icons/fa6";
 
 import { contact } from '@/lib/config';
 import Contact from '@/components/Contact';
@@ -22,9 +20,7 @@ export default function page() {
           <p className=" text-xl font-semibold">Or contact me with...</p>
           {contact.links.map((Element, index) => (
             <Link href={Element.href} key={index} target="_blank" className="group ml-auto mt-2 flex h-12 w-full items-center gap-3 rounded-md border bg-[#f8f9fa] px-4 py-2 text-sm font-semibold text-blue-900 duration-200 hover:bg-[#f2f3f5] motion-reduce:transition-none dark:border-neutral-800 dark:bg-[#161617] dark:text-white dark:hover:border-neutral-700 dark:hover:bg-[#202021]">
-            <>
               {<Element.Icon />} {Element.title}
-            </>
             </Link>
           ))}
           </div>
