@@ -30,11 +30,17 @@ yarn-error.log*
 
 # vercel
 .vercel
+vercel.json
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
 
-
 # Contentlayer
 /.contentlayer
+
+# Build Blogs Assets
+/public/blogs
+
+# Nextjs Bundle Analyzer
+/analyze
