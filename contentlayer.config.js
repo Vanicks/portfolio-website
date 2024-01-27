@@ -1,6 +1,7 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';
+import rehypeClImg from 'rehype-cl-img';
 import readingTime from "reading-time";
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
@@ -95,6 +96,12 @@ export default makeSource({
             className: ['subheading-anchor'],
             arialLabel: 'Link to section'
           }
+        }
+      ],
+      [
+        rehypeClImg, 
+        {
+          resourceDir: "/blogs"
         }
       ]
     ]
