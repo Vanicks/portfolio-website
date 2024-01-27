@@ -1,11 +1,6 @@
-import React from 'react'
-import { 
-  FaGithub,
-  FaTwitter,
-  FaInstagram
-} from "react-icons/fa6";
 import Link from 'next/link';
-import { footer } from '@/lib/config';
+
+import { footer, meta } from '@/lib/config';
 
 export default function Footer() {
   return (
@@ -14,7 +9,7 @@ export default function Footer() {
         <div className="col-span-3 flex flex-col justify-center">
         <Link href="/">
           <span className="flex cursor-pointer items-center text-2xl font-semibold">
-            Paul Andrew
+            {meta.title}
           <span className="bg-gradient-to-r from-[#6310ff] to-[#1491ff] box-decoration-clone bg-clip-text text-fill-transparent dark:from-[#a2facf] dark:to-[#64acff]">.</span>
           </span>
         </Link>
@@ -26,7 +21,7 @@ export default function Footer() {
           </Link>
         </p>
 
-        <p className="mb-4 text-gray-700 opacity-50 dark:text-neutral-300">A programmer without coffee is like a web browser without the Internet - it seemingly works but is it useful?</p>
+        <p className="mb-4 text-gray-700 opacity-85 dark:text-neutral-300">I don't see bugs in my code, I see random features.</p>
         </div>
         {footer.categories.map((category: FooterCategory, index: number) => (
           <div key={index} className="col-span-1 text-gray-700 dark:text-neutral-300">
@@ -42,7 +37,7 @@ export default function Footer() {
         ))}
       </div>
       <div className="mt-5 flex justify-end text-center text-gray-700 dark:text-neutral-300">
-        <p className="font-semibold">&copy; 2019 - {new Date().getFullYear()} Paul Andrew, All rights reserved.</p>
+        <p className="font-semibold">&copy; 2019 - {new Date().getFullYear()} {meta.title}, All rights reserved.</p>
       </div>
     </footer>
   );
