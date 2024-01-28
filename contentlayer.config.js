@@ -1,16 +1,21 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 import readingTime from 'reading-time';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypeClImg from 'rehype-cl-img';
+import staticImages, { staticCoverImage } from "./src/lib/plugin/rehype-cl-img";
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
+import { join } from 'node:path';
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
   readingTime: {
     type: 'json',
     resolve: (doc) => readingTime(doc.body.raw),
+  },
+  bannerURL: {
+    type: 'string',
+    resolve: (doc) => staticCoverImage(doc),
   },
   slug: {
     type: 'string',
@@ -24,6 +29,7 @@ const computedFields = {
 
 export const Blog = defineDocumentType(() => ({
   name: 'Blog',
+  contentDirPath: "src/content/blog",
   filePathPattern: `blog/**/*.mdx`,
   contentType: 'mdx',
   fields: {
@@ -99,11 +105,10 @@ export default makeSource({
         },
       ],
       [
-        rehypeClImg,
-        {
-          resourceDir: '/blogs',
-        },
-      ],
+        staticImages, { 
+          publicDir: join(process.cwd(), "public", "blogs"), 
+          resourcePath: "/blogs" 
+        }],
     ],
   },
 });
