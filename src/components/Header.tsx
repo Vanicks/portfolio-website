@@ -18,7 +18,7 @@ export default function Header() {
           <div className="w-full flex-1 md:w-auto md:flex-none" />
           <nav className="flex items-center">
             <Link
-              href={meta.accounts.github.username}
+              href={`https://github.com/${meta.accounts.github.username}`}
               target="_blank"
               rel="noreferrer">
               <div
@@ -33,7 +33,7 @@ export default function Header() {
               </div>
             </Link>
             <Link
-              href={meta.accounts.twitter.username}
+              href={`https://www.instagram.com/${meta.accounts.twitter.username}`}
               target="_blank"
               rel="noreferrer">
               <div
