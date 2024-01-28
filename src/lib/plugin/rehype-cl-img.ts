@@ -33,6 +33,7 @@ const findPath = (file: VFileWithOutput<unknown>, image: Element) => {
   const data = file.data as unknown as FileData;
 
   const directory = data.rawDocumentData.sourceFileDir;
+  console.log(image.properties?.src)
   if (directory && directory !== ".") {
     return path.join(directory, (image.properties?.src as string) || "");
   }
@@ -121,7 +122,7 @@ export const staticCoverImage = async (post: Blog) => {
     return image;
   }
 
-  const source = path.join("src", "content", post._raw.sourceFileDir, image);
+  const source = path.join("src/content", "blogs", post._raw.sourceFileDir, image);
   const content = await fs.readFile(source);
   const sha256sum = checksum(content);
   const target = path.join("public", "blogs", post._raw.sourceFileDir, image);
