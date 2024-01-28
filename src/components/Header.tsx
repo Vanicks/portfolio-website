@@ -1,12 +1,12 @@
-import Link from "next/link";
-import { FaGithub, FaTwitter } from "react-icons/fa6";
+import Link from 'next/link';
+import { FaGithub, FaTwitter } from 'react-icons/fa6';
 
-import NewNav from './Nav/NewNav';
+import { meta } from '@/lib/config';
+import { cn } from '@/lib/utils';
 import NewMobileNav from './Nav/NewMobileNav';
-import { buttonVariants } from "./ui/button"
-import { cn } from "@/lib/utils"
-import ThemeToggler from "./ThemeToggler";
-import { meta } from '@/lib/config'
+import NewNav from './Nav/NewNav';
+import ThemeToggler from './ThemeToggler';
+import { buttonVariants } from './ui/button';
 
 export default function Header() {
   return (
@@ -20,16 +20,14 @@ export default function Header() {
             <Link
               href={meta.accounts.github.username}
               target="_blank"
-              rel="noreferrer"
-            >
+              rel="noreferrer">
               <div
                 className={cn(
                   buttonVariants({
-                    variant: "ghost",
+                    variant: 'ghost',
                   }),
-                  "w-9 px-0"
-                )}
-              >
+                  'w-9 px-0',
+                )}>
                 <FaGithub className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </div>
@@ -37,16 +35,14 @@ export default function Header() {
             <Link
               href={meta.accounts.twitter.username}
               target="_blank"
-              rel="noreferrer"
-            >
+              rel="noreferrer">
               <div
                 className={cn(
                   buttonVariants({
-                    variant: "ghost",
+                    variant: 'ghost',
                   }),
-                  "w-9 px-0"
-                )}
-              >
+                  'w-9 px-0',
+                )}>
                 <FaTwitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </div>
@@ -56,5 +52,5 @@ export default function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }

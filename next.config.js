@@ -7,50 +7,47 @@ const bundleWithAnalyzer = withBundleAnalyzer({
 
 /** @type {import('next').NextConfig} */
 module.exports = bundleWithAnalyzer(
-  withContentlayer(
-    {
-      eslint: {
-        dirs: ['.'],
-      },
-      poweredByHeader: false,
-      reactStrictMode: true,
-      webpack: (config) => {
-        // config.externals is needed to resolve the following errors:
-        // Module not found: Can't resolve 'bufferutil'
-        // Module not found: Can't resolve 'utf-8-validate'
-        config.externals.push({
-          bufferutil: 'bufferutil',
-          'utf-8-validate': 'utf-8-validate',
-        });
+  withContentlayer({
+    eslint: {
+      dirs: ['.'],
+    },
+    poweredByHeader: false,
+    reactStrictMode: true,
+    webpack: (config) => {
+      // config.externals is needed to resolve the following errors:
+      // Module not found: Can't resolve 'bufferutil'
+      // Module not found: Can't resolve 'utf-8-validate'
+      config.externals.push({
+        bufferutil: 'bufferutil',
+        'utf-8-validate': 'utf-8-validate',
+      });
 
-        return config;
-      },
-      images: {
-        dangerouslyAllowSVG: true,
-        contentDispositionType: 'attachment',
-        contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-        remotePatterns: [
-          {
-            protocol: 'https',
-            hostname: 'lanyard.kyrie25.me',
-            port: '',
-            pathname: '/**',
-          },
-          {
-            protocol: 'https',
-            hostname: '**.anilist.co',
-            port: '',
-            pathname: '/**',
-          },
-          {
-            protocol: 'https',
-            hostname: 'dev.virtualearth.net',
-            port: '',
-            pathname: '/**',
-          },
-        ],
-      },
-
-    }
-  )
+      return config;
+    },
+    images: {
+      dangerouslyAllowSVG: true,
+      contentDispositionType: 'attachment',
+      contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'lanyard.kyrie25.me',
+          port: '',
+          pathname: '/**',
+        },
+        {
+          protocol: 'https',
+          hostname: '**.anilist.co',
+          port: '',
+          pathname: '/**',
+        },
+        {
+          protocol: 'https',
+          hostname: 'dev.virtualearth.net',
+          port: '',
+          pathname: '/**',
+        },
+      ],
+    },
+  }),
 );

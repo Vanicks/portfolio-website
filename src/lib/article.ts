@@ -1,20 +1,22 @@
-import { join, dirname } from "node:path";
-import { mkdir, copyFile } from "node:fs/promises";
+import { copyFile, mkdir } from 'node:fs/promises';
+import { dirname, join } from 'node:path';
 
-export default async function processImage(options: ImageProcessorOptions): Promise<ProcessedImage> {
+export default async function processImage(
+  options: ImageProcessorOptions,
+): Promise<ProcessedImage> {
   const root = process.cwd();
   const blogsPath = join(root, 'src/content/blog/');
-  
+
   const directory = options.slug;
 
   const filePath = `/${options.banner}`;
   const imagePath = join(blogsPath, directory + filePath);
 
-  let src = join(directory, filePath);
-  const target = join(process.cwd(), ("public"), 'blogs', src);
+  const src = join(directory, filePath);
+  const target = join(process.cwd(), 'public', 'blogs', src);
   const targetDir = dirname(target);
 
-  await mkdir(targetDir, {recursive: true});
+  await mkdir(targetDir, { recursive: true });
   await copyFile(imagePath, target);
 
   return {
@@ -22,11 +24,11 @@ export default async function processImage(options: ImageProcessorOptions): Prom
   };
 }
 
-type ProcessedImage = {
+interface ProcessedImage {
   src: string;
-}
+};
 
-type ImageProcessorOptions = {
+interface ImageProcessorOptions {
   banner?: string;
   slug: string;
-}
+};

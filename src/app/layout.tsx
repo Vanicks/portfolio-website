@@ -1,20 +1,20 @@
 import '@/styles/globals.css';
 
-import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
-
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 import { ThemeProvider } from '@/components/ThemeProvider';
-
 import { meta } from '@/lib/config';
+
+import type { Metadata } from 'next';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
     default: meta.title,
-    template: '%s | ' + meta.title
+    template: '%s | ' + meta.title,
   },
   description: meta.description,
   openGraph: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: meta.title,
     description: meta.description,
     locale: 'en_US',
-    type: 'website'
+    type: 'website',
   },
   robots: {
     index: true,
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
-    }
+    },
   },
   twitter: {
     card: 'summary_large_image',
@@ -62,22 +62,22 @@ export const metadata: Metadata = {
       url: '/favicon.ico',
     },
   ],
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className}`}>
-        <ThemeProvider attribute="class" defaultTheme='light'>
+        <ThemeProvider attribute="class" defaultTheme="light">
           <Header />
           {children}
           <Footer />
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

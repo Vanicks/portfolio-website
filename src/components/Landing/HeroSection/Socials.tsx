@@ -1,29 +1,25 @@
-import { 
-  FaGithub,
-  FaTwitter,
-  FaInstagram
-} from "react-icons/fa6";
+import { FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa6';
 
 import { meta } from '@/lib/config';
 import ExternalLink from '../../ExternalLink';
 
 const socials = [
   {
-    name: 'Github',  
+    name: 'Github',
     path: `https://github.com/${meta.accounts.github.username}`,
-    icon: <FaGithub />
+    icon: <FaGithub />,
   },
   {
-      name: 'Twitter',
-      path: `https://twitter.com/${meta.accounts.twitter.username}`,
-      icon: <FaTwitter />
+    name: 'Twitter',
+    path: `https://twitter.com/${meta.accounts.twitter.username}`,
+    icon: <FaTwitter />,
   },
   {
-    name: 'Instagram',  
+    name: 'Instagram',
     path: `https://instagram.com/${meta.accounts.instagram.username}`,
-    icon: <FaInstagram />
-  }
-]
+    icon: <FaInstagram />,
+  },
+];
 
 export default function Socials() {
   return (
@@ -34,14 +30,14 @@ export default function Socials() {
             {social.icon}
             <span className="sr-only">{social.name}</span>
           </ExternalLink>
-        )
+        );
       })}
     </>
-  )
+  );
 }
 
-type Social = {
+interface Social {
   name: string;
   path: string;
   icon: React.ReactNode;
-}
+};

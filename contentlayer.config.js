@@ -1,25 +1,25 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
+import readingTime from 'reading-time';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeClImg from 'rehype-cl-img';
-import readingTime from "reading-time";
+import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
-  readingTime: { 
+  readingTime: {
     type: 'json',
-    resolve: (doc) => readingTime(doc.body.raw)  
+    resolve: (doc) => readingTime(doc.body.raw),
   },
   slug: {
     type: 'string',
-    resolve: (doc) => `/${doc._raw.flattenedPath}`
+    resolve: (doc) => `/${doc._raw.flattenedPath}`,
   },
   slugAsParams: {
     type: 'string',
-    resolve: (doc) => doc._raw.flattenedPath.split('/').slice(1).join('/')
-  }
+    resolve: (doc) => doc._raw.flattenedPath.split('/').slice(1).join('/'),
+  },
 };
 
 export const Blog = defineDocumentType(() => ({
@@ -51,16 +51,16 @@ export const Blog = defineDocumentType(() => ({
       type: 'list',
       of: { type: 'string' },
       description: 'The tags of the post',
-      required: true
+      required: true,
     },
     banner: {
       type: 'string',
       description: 'The banner image of the post',
-      required: true
-    }
+      required: true,
+    },
   },
-  computedFields
-}))
+  computedFields,
+}));
 
 export default makeSource({
   contentDirPath: 'src/content',
@@ -78,14 +78,14 @@ export default makeSource({
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
             // lines to be copy/pasted
             if (node.children.length === 0) {
-              node.children = [{ type: 'text', value: ' ' }]
+              node.children = [{ type: 'text', value: ' ' }];
             }
           },
           onVisitHighlightedLine(node) {
-            node.properties.className.push('line--highlighted')
+            node.properties.className.push('line--highlighted');
           },
           onVisitHighlightedWord(node) {
-            node.properties.className = ['word--highlighted']
+            node.properties.className = ['word--highlighted'];
           },
         },
       ],
@@ -94,16 +94,16 @@ export default makeSource({
         {
           properties: {
             className: ['subheading-anchor'],
-            arialLabel: 'Link to section'
-          }
-        }
+            arialLabel: 'Link to section',
+          },
+        },
       ],
       [
-        rehypeClImg, 
+        rehypeClImg,
         {
-          resourceDir: "/blogs"
-        }
-      ]
-    ]
-  }
-})
+          resourceDir: '/blogs',
+        },
+      ],
+    ],
+  },
+});
