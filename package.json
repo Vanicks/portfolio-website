@@ -44,7 +44,6 @@
     "react-icons": "^5.0.1",
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^7.1.0",
-    "rehype-cl-img": "^1.1.6",
     "rehype-code-titles": "^1.2.0",
     "rehype-pretty-code": "^0.12.6",
     "rehype-slug": "^6.0.0",
@@ -94,6 +93,8 @@
     "prettier-plugin-tailwindcss": "^0.5.11",
     "tailwindcss": "^3.3.0",
     "typescript": "^5.3.3",
+    "unified": "^10.1.2",
+    "unist-util-visit": "^4.1.2",
     "vercel": "^33.2.0"
   },
   "config": {
