@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "format": "prettier --write \"**/*.{css,js,mjs,cjs,json,jsx,ts,tsx}\"",
+    "format:check": "prettier --check \"**/*.{css,js,mjs,cjs,json,jsx,ts,tsx}\"",
     "commit": "cz",
     "prepare": "husky install",
     "postbuild": "next-sitemap"
@@ -62,6 +64,7 @@
     "@next/bundle-analyzer": "^14.0.4",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/typography": "^0.5.10",
+    "@types/eslint": "^8.56.2",
     "@types/node": "^20.11.6",
     "@types/node-fetch": "^2.6.11",
     "@types/react": "^18.2.48",
@@ -88,6 +91,7 @@
     "postcss": "^8",
     "prettier": "3.2.4",
     "prettier-plugin-sort-json": "^3.1.0",
+    "prettier-plugin-tailwindcss": "^0.5.11",
     "tailwindcss": "^3.3.0",
     "typescript": "^5.3.3",
     "vercel": "^33.2.0"
