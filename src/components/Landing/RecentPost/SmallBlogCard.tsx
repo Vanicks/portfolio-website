@@ -43,14 +43,14 @@ function SmallBlogCard({ data, isNew }: CardOptions) {
           </div>
           <hr className="w-full article-bottom-border h-[1px]" />
           <ul className="flex px-4 py-2 gap-2 flex-wrap text-xs text-primary">
-            <div className="text-primary">{readingTimeText}</div>
-            <div className="h-full w-[1px] mr-1">
+            <li className="text-primary">{readingTimeText}</li>
+            <li className="h-full w-[1px] mr-1">
               <span>|</span>
-            </div>
+            </li>
             {data.tags.map((tag) => (
-              <div key={tag} className="pr-2">
+              <li key={tag} className="pr-2">
                 {tag}
-              </div>
+              </li>
             ))}
           </ul>
         </div>
