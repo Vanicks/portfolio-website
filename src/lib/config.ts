@@ -15,7 +15,7 @@ export const meta = {
       username: 'NotKaskus',
     },
     twitter: {
-      username: 'TrueKaskus',
+      username: 'its_kaskus',
     },
     discord: {
       username: 'paulandrew',
