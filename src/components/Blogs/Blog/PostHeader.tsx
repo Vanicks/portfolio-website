@@ -4,14 +4,8 @@ import { type Blog } from 'contentlayer/generated';
 import { formatDistance } from 'date-fns';
 import Image from 'next/image';
 
-import processImage from '@/lib/article';
-
 export default async function PostHeader({ content }: { content: Blog }) {
-  const imageSrc = await processImage({
-    slug: content.slugAsParams,
-    banner: content.banner,
-  });
-
+  console.log(content.bannerURL)
   return (
     <>
       <div className="flex gap-4 font-sans items-center">
@@ -29,7 +23,7 @@ export default async function PostHeader({ content }: { content: Blog }) {
         sizes="(min-width: 500px) 800px, 400px"
         width={1600}
         height={(1600 * 9) / 16}
-        src={imageSrc.src}
+        src={content.bannerURL}
         loading="eager"
         className="article-banner my-10 aspect-ratio-[16/9] shadow-lg w-full rounded-lg outline outline-1 outline-body-800 object-cover"
       />
