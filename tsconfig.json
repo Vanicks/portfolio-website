@@ -15,15 +15,25 @@
     "incremental": true,
     "plugins": [
       {
-        "name": "next"
-      }
+        "name": "next",
+      },
     ],
     "paths": {
       "@/*": ["./src/*"],
       "@/public/*": ["./public/*"],
-      "contentlayer/generated": ["./.contentlayer/generated"]
-    }
+      "contentlayer/generated": ["./.contentlayer/generated"],
+    },
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".contentlayer/generated"],
-  "exclude": ["node_modules"]
+  "include": [
+    ".eslintrc.cjs",
+    "next-env.d.ts",
+    "src/types/**/*.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.mjs",
+    "**/*.js",
+    "**/*.cjs",
+    ".next/types/**/*.ts",
+  ],
+  "exclude": ["node_modules"],
 }

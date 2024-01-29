@@ -1,15 +1,21 @@
-"use client";
+/* eslint-disable */
 
+'use client';
+
+import {
+  ArrowPathIcon,
+  CheckCircleIcon,
+  ExclamationTriangleIcon,
+} from '@heroicons/react/24/outline';
+import clsx from 'clsx';
 import React, { useState } from 'react';
-import clsx from "clsx";
 import { isEmail } from 'validator';
-import { ArrowPathIcon, CheckCircleIcon, ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    email: "",
-    name: "",
-    message: "",
+    email: '',
+    name: '',
+    message: '',
   });
 
   const [invalid, setInvalid] = useState({
@@ -18,14 +24,14 @@ export default function Contact() {
     message: false,
   });
 
-  const [success, setSuccess] = useState("");
-  const [error, setError] = useState("");
+  const [success, setSuccess] = useState('');
+  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    setSuccess("");
-    setError("");
+    setSuccess('');
+    setError('');
 
     const { email, name, message } = formData;
 
@@ -35,19 +41,19 @@ export default function Contact() {
         email: true,
       });
 
-      return setError("Please enter a valid email address!");
+      return setError('Please enter a valid email address!');
     } else if (email.trim().length < 5 || email.trim().length > 50) {
       setInvalid({
         ...invalid,
         email: true,
       });
-      return setError("Email address must be between 5 and 50 characters!");
+      return setError('Email address must be between 5 and 50 characters!');
     } else if (!name || name.trim().length === 0) {
       setInvalid({
         ...invalid,
         name: true,
       });
-      return setError("Please enter your name!");
+      return setError('Please enter your name!');
     } else if (
       !name.trim() ||
       name.trim().length < 3 ||
@@ -57,13 +63,13 @@ export default function Contact() {
         ...invalid,
         name: true,
       });
-      return setError("Name must be between 3 and 20 characters!");
+      return setError('Name must be between 3 and 20 characters!');
     } else if (!message || message.trim().length === 0) {
       setInvalid({
         ...invalid,
         message: true,
       });
-      return setError("Please enter a message!");
+      return setError('Please enter a message!');
     } else if (
       !message.trim() ||
       message.trim().length < 10 ||
@@ -73,17 +79,17 @@ export default function Contact() {
         ...invalid,
         message: true,
       });
-      return setError("Message must be between 10 and 500 characters!");
+      return setError('Message must be between 10 and 500 characters!');
     }
 
     const data = { email, name, message };
 
     setLoading(true);
 
-    await fetch("/api/contact", {
-      method: "POST",
+    await fetch('/api/contact', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
     })
@@ -97,7 +103,7 @@ export default function Contact() {
           });
           setError(data.message);
         } else {
-          setFormData({ email: "", name: "", message: "" });
+          setFormData({ email: '', name: '', message: '' });
           setInvalid({
             email: false,
             name: false,
@@ -109,11 +115,11 @@ export default function Contact() {
   };
 
   const handleChange = (e: any, type: any) => {
-    setSuccess("");
-    setError("");
+    setSuccess('');
+    setError('');
 
     if (
-      type === "email" &&
+      type === 'email' &&
       (e.target.value.trim().length === 0 || isEmail(e.target.value))
     ) {
       setInvalid({
@@ -121,7 +127,7 @@ export default function Contact() {
         email: false,
       });
     } else if (
-      type === "email" &&
+      type === 'email' &&
       (!isEmail(e.target.value) ||
         e.target.value.trim().length < 5 ||
         e.target.value.trim().length > 50)
@@ -133,7 +139,7 @@ export default function Contact() {
     }
 
     if (
-      (type === "name" && e.target.value.trim().length === 0) ||
+      (type === 'name' && e.target.value.trim().length === 0) ||
       (e.target.value.trim().length >= 3 && e.target.value.trim().length <= 20)
     ) {
       setInvalid({
@@ -141,7 +147,7 @@ export default function Contact() {
         name: false,
       });
     } else if (
-      type === "name" &&
+      type === 'name' &&
       (e.target.value.trim().length < 3 || e.target.value.trim().length > 20)
     ) {
       setInvalid({
@@ -150,7 +156,7 @@ export default function Contact() {
       });
     }
 
-    if (type === "message" && e.target.value.trim().length > 500) {
+    if (type === 'message' && e.target.value.trim().length > 500) {
       setInvalid({
         ...invalid,
         message: true,
@@ -161,7 +167,7 @@ export default function Contact() {
         message: e.target.value.trim().slice(0, 500),
       });
     } else if (
-      type === "message" &&
+      type === 'message' &&
       e.target.value.trim().length >= 10 &&
       e.target.value.trim().length <= 500
     ) {
@@ -180,33 +186,30 @@ export default function Contact() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="relative flex w-full flex-col items-center justify-center"
-    >
+      className="relative flex w-full flex-col items-center justify-center">
       <div className="z-[2] block w-full items-center justify-center gap-1.5 text-left md:flex">
         <label
           htmlFor="name"
-          className="w-full text-left text-sm font-semibold tracking-wide text-gray-700 dark:text-neutral-300"
-        >
+          className="w-full text-left text-sm font-semibold tracking-wide text-gray-700 dark:text-neutral-300">
           Name
           <span
             aria-hidden={true}
             className="cursor-help text-red-500"
-            title="Required"
-          >
+            title="Required">
             *
           </span>
           <input
             value={formData.name}
             name="name"
-            onChange={(e) => handleChange(e, "name")}
+            onChange={(e) => handleChange(e, 'name')}
             id="name"
             className={clsx(
               {
-                "border-red-400 text-red-400": invalid.name,
-                "border-gray-300 text-gray-800 focus:border-blue-700 dark:border-neutral-800 dark:text-white focus:dark:border-neutral-700":
+                'border-red-400 text-red-400': invalid.name,
+                'border-gray-300 text-gray-800 focus:border-blue-700 dark:border-neutral-800 dark:text-white focus:dark:border-neutral-700':
                   !invalid.name,
               },
-              "my-2 w-full rounded-lg border-[1px] p-2 font-normal outline-0 duration-200 dark:bg-transparent",
+              'my-2 w-full rounded-lg border-[1px] p-2 font-normal outline-0 duration-200 dark:bg-transparent',
             )}
             type="text"
             placeholder="John Doe"
@@ -214,28 +217,26 @@ export default function Contact() {
         </label>
         <label
           htmlFor="email"
-          className="w-full text-left text-sm font-semibold tracking-wide text-gray-700 dark:text-neutral-300"
-        >
+          className="w-full text-left text-sm font-semibold tracking-wide text-gray-700 dark:text-neutral-300">
           Email
           <span
             aria-hidden={true}
             className="cursor-help text-red-500"
-            title="Required"
-          >
+            title="Required">
             *
           </span>
           <input
             value={formData.email}
             name="email"
-            onChange={(e) => handleChange(e, "email")}
+            onChange={(e) => handleChange(e, 'email')}
             id="email"
             className={clsx(
               {
-                "border-red-400 text-red-400": invalid.email,
-                "border-gray-300 text-gray-800 focus:border-blue-700 dark:border-neutral-800 dark:text-white focus:dark:border-neutral-700":
+                'border-red-400 text-red-400': invalid.email,
+                'border-gray-300 text-gray-800 focus:border-blue-700 dark:border-neutral-800 dark:text-white focus:dark:border-neutral-700':
                   !invalid.email,
               },
-              "my-2 w-full rounded-lg border-[1px] p-2 font-normal outline-0 duration-200 dark:bg-transparent",
+              'my-2 w-full rounded-lg border-[1px] p-2 font-normal outline-0 duration-200 dark:bg-transparent',
             )}
             type="email"
             placeholder="john@doe.com"
@@ -245,28 +246,26 @@ export default function Contact() {
       <div className="mt-2 flex w-full flex-col items-center justify-center gap-1.5">
         <label
           htmlFor="message"
-          className="w-full text-left text-sm font-semibold tracking-wide text-gray-700 dark:text-neutral-300"
-        >
+          className="w-full text-left text-sm font-semibold tracking-wide text-gray-700 dark:text-neutral-300">
           Message
           <span
             aria-hidden={true}
             className="cursor-help text-red-500"
-            title="Required"
-          >
+            title="Required">
             *
           </span>
           <textarea
             value={formData.message}
             name="message"
-            onChange={(e) => handleChange(e, "message")}
+            onChange={(e) => handleChange(e, 'message')}
             id="message"
             className={clsx(
               {
-                "border-red-400 text-red-400": invalid.message,
-                "border-gray-300 text-gray-800 focus:border-blue-700 dark:border-neutral-800 dark:text-white focus:dark:border-neutral-700":
+                'border-red-400 text-red-400': invalid.message,
+                'border-gray-300 text-gray-800 focus:border-blue-700 dark:border-neutral-800 dark:text-white focus:dark:border-neutral-700':
                   !invalid.message,
               },
-              "mt-2 max-h-40 min-h-[80px] w-full rounded-lg border-[1px] p-2 font-normal outline-0 duration-200 dark:bg-transparent",
+              'mt-2 max-h-40 min-h-[80px] w-full rounded-lg border-[1px] p-2 font-normal outline-0 duration-200 dark:bg-transparent',
             )}
             placeholder="Hello there!"
           />
@@ -274,16 +273,15 @@ export default function Contact() {
         <span
           className={clsx(
             {
-              "text-red-400": formData.message.trim().length >= 500,
-              "text-gray-700 dark:text-neutral-300":
+              'text-red-400': formData.message.trim().length >= 500,
+              'text-gray-700 dark:text-neutral-300':
                 formData.message.trim().length >= 10 &&
                 formData.message.trim().length < 500,
             },
-            "ml-auto text-xs opacity-50",
-          )}
-        >
-          {formData.message.trim().length}/500{" "}
-          {formData.message.trim().length >= 500 && invalid.message && " (max)"}
+            'ml-auto text-xs opacity-50',
+          )}>
+          {formData.message.trim().length}/500{' '}
+          {formData.message.trim().length >= 500 && invalid.message && ' (max)'}
         </span>
       </div>
 
@@ -303,8 +301,7 @@ export default function Contact() {
         <button
           className="group ml-auto mt-2 flex w-fit rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 duration-200 hover:bg-blue-200 disabled:cursor-not-allowed disabled:opacity-50 motion-reduce:transition-none dark:bg-white/10 dark:text-white dark:hover:bg-white/15"
           type="submit"
-          disabled={loading}
-        >
+          disabled={loading}>
           {loading ? (
             <>
               Sending
@@ -318,8 +315,7 @@ export default function Contact() {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                strokeWidth={2}
-              >
+                strokeWidth={2}>
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -331,5 +327,5 @@ export default function Contact() {
         </button>
       </div>
     </form>
-  )
+  );
 }

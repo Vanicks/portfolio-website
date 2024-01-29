@@ -1,37 +1,43 @@
-'use client';
+import { FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa6';
 
-import Link from 'next/link';
-import { 
-  FaGithub,
-  FaTwitter,
-  FaInstagram
-} from "react-icons/fa6";
-
+import { meta } from '@/lib/config';
 import ExternalLink from '../../ExternalLink';
 
 const socials = [
   {
-      path: 'https://github.com/NotKaskus',
-      icon: <FaGithub />
+    name: 'Github',
+    path: `https://github.com/${meta.accounts.github.username}`,
+    icon: <FaGithub />,
   },
   {
-      path: 'https://twitter.com/not_kaskus',
-      icon: <FaTwitter />
+    name: 'Twitter',
+    path: `https://twitter.com/${meta.accounts.twitter.username}`,
+    icon: <FaTwitter />,
   },
   {
-      path: 'https://instagram.com/not_kaskus',
-      icon: <FaInstagram />
-  }
-]
+    name: 'Instagram',
+    path: `https://instagram.com/${meta.accounts.instagram.username}`,
+    icon: <FaInstagram />,
+  },
+];
 
 export default function Socials() {
   return (
     <>
-      {socials.map((socials: { path: string, icon: React.ReactNode }, index: number) => {
+      {socials.map((social: Social, index: number) => {
         return (
-          <ExternalLink aria-label='socials-links' href={socials.path} key={index}>{socials.icon}</ExternalLink>
-        )
+          <ExternalLink href={social.path} key={index}>
+            {social.icon}
+            <span className="sr-only">{social.name}</span>
+          </ExternalLink>
+        );
       })}
     </>
-  )
+  );
 }
+
+interface Social {
+  name: string;
+  path: string;
+  icon: React.ReactNode;
+};

@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   @layer base {
     :root {
@@ -50,7 +50,7 @@
     }
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
@@ -62,7 +62,7 @@
 
 .article-bottom-border {
   border: none;
-  background: linear-gradient(to right, var(--body-700), transparent);
+  background: linear-gradient(to right, #50535e, transparent);
 }
 .article-image {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
@@ -162,6 +162,6 @@ h1.article-title {
   line-height: 1.35;
 }
 
-.burger svg[data-hide="true"] {
+.burger svg[data-hide='true'] {
   @apply -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0;
 }
