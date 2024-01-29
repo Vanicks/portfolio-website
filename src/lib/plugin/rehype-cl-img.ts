@@ -33,7 +33,6 @@ const findPath = (file: VFileWithOutput<unknown>, image: Element) => {
   const data = file.data as unknown as FileData;
 
   const directory = data.rawDocumentData.sourceFileDir;
-  console.log(image.properties?.src)
   if (directory && directory !== ".") {
     return path.join(directory, (image.properties?.src as string) || "");
   }

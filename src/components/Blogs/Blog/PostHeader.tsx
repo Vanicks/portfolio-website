@@ -5,7 +5,6 @@ import { formatDistance } from 'date-fns';
 import Image from 'next/image';
 
 export default async function PostHeader({ content }: { content: Blog }) {
-  console.log(content.bannerURL)
   return (
     <>
       <div className="flex gap-4 font-sans items-center">

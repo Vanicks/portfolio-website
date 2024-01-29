@@ -19,11 +19,11 @@ const computedFields = {
   },
   slug: {
     type: 'string',
-    resolve: (doc) => `/${doc._raw.flattenedPath}`,
+    resolve: (doc) => `${doc._raw.flattenedPath}`,
   },
   slugAsParams: {
     type: 'string',
-    resolve: (doc) => doc._raw.flattenedPath.split('/').slice(1).join('/'),
+    resolve: (doc) => doc._raw.flattenedPath,
   },
 };
 
@@ -68,7 +68,7 @@ export const Blog = defineDocumentType(() => ({
 }));
 
 export default makeSource({
-  contentDirPath: 'src/content/blogs/',
+  contentDirPath: 'src/content/blogs',
   documentTypes: [Blog],
   mdx: {
     remarkPlugins: [remarkGfm],

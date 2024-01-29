@@ -15,11 +15,11 @@ export function generateMetadata({ params }: BlogPageParams): Metadata {
     title: blog?.title,
     description: blog?.description,
     openGraph: {
-      images: [`/blogs/${blog.slugAsParams}/images/banner.png`],
+      images: [blog.bannerURL],
       type: 'article',
     },
     twitter: {
-      images: [`/blogs/${blog.slugAsParams}/images/banner.png`],
+      images: [blog.bannerURL],
     },
   };
 }
