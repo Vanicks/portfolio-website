@@ -8,6 +8,7 @@ import sharp from "sharp";
 import type { Plugin, VFileWithOutput } from "unified";
 import { visit } from "unist-util-visit";
 import createPlaceholder from "./placeholder";
+import type { VFile } from "vfile";
 
 interface FileData {
   rawDocumentData: RawDocumentData;
@@ -103,7 +104,8 @@ interface Options {
   resourcePath: string;
 };
 
-const staticImages: Plugin<[Options], Root> = (options) => (tree, file, done) => {
+/* eslint-disable */
+const staticImages: Plugin<[Options], Root> = (options) => (tree: any, file: VFile, done: () => any) => {
   const tasks: Promise<void>[] = [];
 
   visit(tree, "element", (node) => {
@@ -114,6 +116,7 @@ const staticImages: Plugin<[Options], Root> = (options) => (tree, file, done) =>
 
   Promise.all(tasks).then(() => done()).catch((error) => console.error(error));
 };
+/* eslint-enable */
 
 export const staticCoverImage = async (post: Blog) => {
   const image = post.banner;
