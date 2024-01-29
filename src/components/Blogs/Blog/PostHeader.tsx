@@ -4,7 +4,7 @@ import { type Blog } from 'contentlayer/generated';
 import { formatDistance } from 'date-fns';
 import Image from 'next/image';
 
-export default async function PostHeader({ content }: { content: Blog }) {
+export default function PostHeader({ content }: { content: Blog }) {
   return (
     <>
       <div className="flex gap-4 font-sans items-center">
