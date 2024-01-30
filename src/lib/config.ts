@@ -77,7 +77,7 @@ export const footer = {
         },
         {
           title: 'Blog',
-          href: '/blog',
+          href: '/blogs',
         },
       ],
     },
