@@ -25,6 +25,7 @@ export const meta = {
     instagram: {
       username: 'its_kaskus',
     },
+    email: 'paulandrew103@proton.me'
   },
 };
 
@@ -120,7 +121,7 @@ export const footer = {
 export const contact = {
   links: [
     {
-      href: 'mailto:paul.andrew@protonmail.com',
+      href: `mailto:${meta.accounts.email}`,
       title: 'Email',
       Icon: MdEmail,
     },
