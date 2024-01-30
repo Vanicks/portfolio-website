@@ -56,7 +56,7 @@ function createFeed({ origin }: { origin: NextRequest["nextUrl"]["origin"] }) {
 }
 
 export async function GET(req: NextRequest) {
-  const origin = process.env.NODE_ENV === 'development' ? req.nextUrl.origin : process.env.VERCEL_URL || 'https://localhost:3000';
+  const origin = process.env.NODE_ENV === 'development' ? req.nextUrl.origin : process.env.NEXT_PUBLIC_VERCEL_URL || 'https://localhost:3000';
   const rss = createFeed({ origin });
   return new Response(rss, {
     status: 200,
