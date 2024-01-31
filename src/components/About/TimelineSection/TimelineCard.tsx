@@ -44,7 +44,7 @@ export default function TimelineCard({
             <h4 className="text-sm font-medium text-[#616973] dark:text-[##b3b7bb]">{timespan}</h4>
           </div>
         </div>
-        <p className="mb-4 text-base font-normal text-[#646872e0] dark:text-[#dadde7]">
+        <p className="mb-4 text-base font-normal text-muted-foreground">
           {description}
         </p>
       </li>
