@@ -1,4 +1,4 @@
-import { allBlogs, Blog } from 'contentlayer/generated';
+import { allBlogs, type Blog } from 'contentlayer/generated';
 import { compareDesc, parseISO, setHours } from "date-fns";
 import { Feed } from 'feed';
 import type { NextRequest } from 'next/server';
@@ -31,8 +31,7 @@ function createFeed({ origin }: { origin: NextRequest["nextUrl"]["origin"] }) {
 
   allBlogs
     .sort((a, b) => compareDesc(new Date(a.publishedAt), new Date(b.publishedAt)))
-    .forEach((post) => {
-      console.log(`${link}${post.bannerURL}`)
+    .forEach((post: Blog) => {
       const id = `${link}/blogs${post.slugAsParams}`;
       const url = createPostUrl(id);
       feed.addItem({
@@ -55,13 +54,13 @@ function createFeed({ origin }: { origin: NextRequest["nextUrl"]["origin"] }) {
   return feed.rss2();
 }
 
-export async function GET(req: NextRequest) {
-  const origin = process.env.NODE_ENV === 'development' ? req.nextUrl.origin : process.env.NEXT_PUBLIC_VERCEL_URL || 'https://localhost:3000';
+export function GET(req: NextRequest) {
+  const origin = process.env.NODE_ENV === 'development' ? req.nextUrl.origin : process.env.NEXT_PUBLIC_VERCEL_URL ?? 'https://localhost:3000';
   const rss = createFeed({ origin });
   return new Response(rss, {
     status: 200,
     headers: {
       'content-type': 'application/rss+xml',
     }
-  })
-}
+  });
+};
