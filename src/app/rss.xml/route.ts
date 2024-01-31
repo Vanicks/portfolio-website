@@ -23,7 +23,7 @@ function createFeed({ origin }: { origin: NextRequest["nextUrl"]["origin"] }) {
     copyright: `All rights reserved 2018, ${meta.title}`,
     author: {
       name: meta.author,
-      email: meta.accounts.email, // TODO: get email from config
+      email: meta.accounts.email,
       link: link,
     },
     generator: 'Next.js using Feed for Node.js',
@@ -41,7 +41,7 @@ function createFeed({ origin }: { origin: NextRequest["nextUrl"]["origin"] }) {
         description: post.description,
         author: [{
           name: meta.author,
-          email: meta.accounts.email, // TODO: get email from config
+          email: meta.accounts.email,
           link: link,
         }],
         date: setHours(parseISO(post.publishedAt), 13),
