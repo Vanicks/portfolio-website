@@ -32,7 +32,7 @@ function createFeed({ origin }: { origin: NextRequest["nextUrl"]["origin"] }) {
   allBlogs
     .sort((a, b) => compareDesc(new Date(a.publishedAt), new Date(b.publishedAt)))
     .forEach((post: Blog) => {
-      const id = `${link}/blogs${post.slugAsParams}`;
+      const id = `${link}/blogs/${post.slugAsParams}`;
       const url = createPostUrl(id);
       feed.addItem({
         title: post.title,
