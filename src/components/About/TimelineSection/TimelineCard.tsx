@@ -10,7 +10,7 @@ export default function TimelineCard({
 }: Props) {
   return (
     <>
-      <li className="-mt-3 mb-10 ml-6 rounded-2xl border px-6 py-3 duration-200 hover:bg-gray-200/50 motion-reduce:transition-none dark:border-neutral-800 dark:bg-[#606070] dark:hover:border-neutral-700 dark:hover:bg-[#202021]">
+      <li className="-mt-3 mb-10 ml-6 rounded-2xl border px-6 py-3 duration-200 hover:bg-gray-200/50 motion-reduce:transition-none dark:border-neutral-800 dark:hover:border-neutral-700 dark:hover:bg-[#202021]">
         <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
           <svg
             className="w-2.5 h-2.5 text-blue-800 dark:text-blue-300"
@@ -40,11 +40,11 @@ export default function TimelineCard({
                 </span>
               )}
             </h3>
-            <h3 className="font-medium text-md text-gray-500">{company}</h3>
-            <h4 className="text-sm font-medium text-gray-400">{timespan}</h4>
+            <h3 className="font-medium text-md text-[#4c515d] dark:text-[#c2c9d9]">{company}</h3>
+            <h4 className="text-sm font-medium text-[#616973] dark:text-[##b3b7bb]">{timespan}</h4>
           </div>
         </div>
-        <p className="mb-4 text-base font-normal text-[#1e2024] dark:text-[#dadde7]">
+        <p className="mb-4 text-base font-normal text-[#646872e0] dark:text-[#dadde7]">
           {description}
         </p>
       </li>

@@ -12,6 +12,7 @@ import type { Metadata } from 'next';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_VERCEL_URL ?? 'https://localhost:3000'),
   title: {
     default: meta.title,
     template: '%s | ' + meta.title,

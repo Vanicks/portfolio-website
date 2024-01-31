@@ -1,4 +1,4 @@
-import TeachIcons from './TechstackSection/TeachIcons';
+import { FavTechIcons, TeachIcons } from './TechstackSection/TeachIcons';
 
 export default function TechStack() {
   return (
@@ -14,8 +14,20 @@ export default function TechStack() {
           use currently.
         </p>
       </div>
-      <div className="grid grid-cols-2 gap-2 sm:grid-cols-5">
+      {/* <div className="grid grid-cols-2 gap-2 sm:grid-cols-5">
         <TeachIcons />
+      </div> */}
+      <div className='pt-3 md:pt-5'>
+        <p className='text-lg md:text-xl font-semibold'>Favorite Technologies</p>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mt-3'>
+          <FavTechIcons />
+        </div>
+      </div>
+      <div className="pt-3 md:pt-5">
+        <p className="text-lg md:text-xl font-semibold">Other Technologies</p>
+        <div className="mt-3 grid grid-cols-6 sm:flex sm:flex-wrap gap-[0.5rem]">
+          <TeachIcons />
+        </div>
       </div>
     </>
   );

@@ -34,7 +34,7 @@ export default function SmallPostCard({ data, isNew }: CardOptions) {
               })}
             </time>
           </div>
-          <hr className="w-full article-bottom-border h-[1px]" />
+          <hr className="w-full border-none bg-gradient-to-r from-[#b3b7bb] dark:from-[#50535e] to-transparent h-[1px]" />
           <ul className="flex px-4 py-2 gap-2 flex-wrap text-xs text-primary">
             <div className="text-primary">
               {readingTime(data.body.raw, { wordsPerMinute: 150 }).text}

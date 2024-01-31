@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 import Socials from './HeroSection/Socials';
+import { meta } from '@/lib/config';
 
 export default function Hero() {
   return (
@@ -24,7 +25,7 @@ export default function Hero() {
           <p>
             Feel free to contact me for any reason, even if it&apos;s just to chat.
             You can contact me through Discord or send an email to
-            andrewonrubia@gmail.com.
+            {meta.accounts.email}.
           </p>
         </div>
         <div className="flex flex-col gap-2">
