@@ -1,13 +1,14 @@
 import '@/styles/globals.css';
 
 import { Inter } from 'next/font/google';
+import type { Metadata } from 'next';
 
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { meta } from '@/lib/config';
 
-import type { Metadata } from 'next';
+import AnalyticsWrapper from '@/components/AnalyticsWrapper';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -77,6 +78,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+          <AnalyticsWrapper />
         </ThemeProvider>
       </body>
     </html>
