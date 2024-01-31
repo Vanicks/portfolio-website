@@ -23,7 +23,7 @@ export default function RecentPost() {
     <>
       <SectionHeader title="Recent Posts">
         <Link
-          href="rss.xml"
+          href="/rss.xml"
           className="underlined inline-flex items-center gap-2 text-color-blue">
           <p>Subscribe to the RSS feed</p>
           <FaRss />
