@@ -9,16 +9,6 @@ module.exports = {
   ],
   prefix: '',
   theme: {
-    typography: {
-      DEFAULT: {
-        css: {
-          a: {
-            // change anchor color and on hover
-            color: '#406dcc',
-          },
-        },
-      },
-    },
     container: {
       center: true,
       padding: '2rem',

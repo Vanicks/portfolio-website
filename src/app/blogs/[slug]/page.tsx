@@ -1,7 +1,9 @@
 import { allBlogs } from 'contentlayer/generated';
 import { getMDXComponent } from 'next-contentlayer/hooks';
 import { notFound } from 'next/navigation';
-import { cache } from 'react';
+import React, { cache } from 'react';
+import type { MDXComponents } from 'mdx/types';
+import Image from 'next/image';
 
 import PostHeader from '@/components/Blogs/Blog/PostHeader';
 
@@ -42,6 +44,11 @@ const getBlogFromParams = cache((slug: string): Blog => {
   return blog;
 });
 
+const mdxComponent: MDXComponents = {
+  img: ({src, alt, width, height}) =>
+      <Image src={src!} alt={alt!} width={width as number} height={height as number} className='rounded-md shadow-md' />
+};
+
 export default function BlogPage({ params }: BlogPageParams) {
   const blog = getBlogFromParams(params.slug);
   const Content = getMDXComponent(blog.body.code);
@@ -52,7 +59,7 @@ export default function BlogPage({ params }: BlogPageParams) {
         <PostHeader content={blog} />
       </header>
       <main className="main-article text-[#1e2024] dark:text-[#dadde7] article-grid px-6 lg:px-0 larger-line-height text-xl lg:text-2xl leading-10 my-2xl leading-looser w-full">
-        <Content />
+        <Content components={{ ...mdxComponent }} />
       </main>
       <div className="w-full h-full relative">
         <hr className="mt-2 mb-2 border-top-1 w-full h-[1px] bg-[#f3f4f7] col-span-full transition-all" />

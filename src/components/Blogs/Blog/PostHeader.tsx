@@ -24,6 +24,7 @@ export default function PostHeader({ content }: { content: Blog }) {
         height={(1600 * 9) / 16}
         src={content.bannerURL}
         loading="eager"
+        priority
         className="article-banner my-10 aspect-ratio-[16/9] shadow-lg w-full rounded-lg outline outline-1 outline-body-800 object-cover"
       />
 
