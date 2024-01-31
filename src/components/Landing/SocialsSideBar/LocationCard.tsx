@@ -7,7 +7,7 @@ export default function LocationCard() {
     <div className="group relative flex h-full min-h-[13rem] flex-shrink-0 overflow-hidden rounded-xl">
       <Image
         alt="A map locating roughly where I am right now"
-        src={`https://dev.virtualearth.net/REST/V1/Imagery/Map/CanvasLight/42.6564%2C-73.7638/13?mapSize=600%2C300&format=png&key=${process.env.BING_STATIC_MAP_API_KEY}`}
+        src={`https://dev.virtualearth.net/REST/V1/Imagery/Map/CanvasLight/42.6564%2C-73.7638/13?mapSize=600%2C300&format=png&key=${process.env.NEXT_PUBLIC_BING_STATIC_MAP_API_KEY}`}
         loading="lazy"
         className="absolute inset-0 h-full w-full scale-[1.25] bg-black object-cover object-center"
         fill
