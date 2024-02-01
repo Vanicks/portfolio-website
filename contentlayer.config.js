@@ -1,11 +1,13 @@
+import { join } from 'node:path';
+
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 import readingTime from 'reading-time';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import staticImages, { staticCoverImage } from "./src/lib/plugin/rehype-cl-img";
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
-import { join } from 'node:path';
+
+import staticImages, { staticCoverImage } from './src/lib/plugin/rehype-cl-img';
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -104,10 +106,12 @@ export default makeSource({
         },
       ],
       [
-        staticImages, { 
-          publicDir: join(process.cwd(), "public", "blogs"), 
-          resourcePath: "/blogs" 
-        }],
+        staticImages,
+        {
+          publicDir: join(process.cwd(), 'public', 'blogs'),
+          resourcePath: '/blogs',
+        },
+      ],
     ],
   },
 });

@@ -1,29 +1,32 @@
-import type { Blog } from "contentlayer/generated";
-import type { RawDocumentData } from "contentlayer/source-files";
-import fs from "fs/promises";
-import type { Element, Root } from "hast";
-import crypto from "node:crypto";
-import path from "node:path";
-import sharp from "sharp";
-import type { Plugin, VFileWithOutput } from "unified";
-import { visit } from "unist-util-visit";
-import createPlaceholder from "./placeholder";
-import type { VFile } from "vfile";
+import fs from 'fs/promises';
+import crypto from 'node:crypto';
+import path from 'node:path';
+
+import sharp from 'sharp';
+import { visit } from 'unist-util-visit';
+
+import createPlaceholder from './placeholder';
+
+import type { Blog } from 'contentlayer/generated';
+import type { RawDocumentData } from 'contentlayer/source-files';
+import type { Element, Root } from 'hast';
+import type { Plugin, VFileWithOutput } from 'unified';
+import type { VFile } from 'vfile';
 
 interface FileData {
   rawDocumentData: RawDocumentData;
-};
+}
 
 const fileChecksum = async (file: string) => {
   try {
     return checksum(await fs.readFile(file));
   } catch (_) {
-    return "";
+    return '';
   }
 };
 
 const checksum = (content: Buffer) => {
-  return crypto.createHash("sha256").update(content).digest("hex");
+  return crypto.createHash('sha256').update(content).digest('hex');
 };
 
 const findRoot = (file: VFileWithOutput<unknown>) => {
@@ -34,11 +37,11 @@ const findPath = (file: VFileWithOutput<unknown>, image: Element) => {
   const data = file.data as unknown as FileData;
 
   const directory = data.rawDocumentData.sourceFileDir;
-  if (directory && directory !== ".") {
-    return path.join(directory, (image.properties?.src as string) || "");
+  if (directory && directory !== '.') {
+    return path.join(directory, (image.properties?.src as string) || '');
   }
 
-  return (image.properties?.src as string) || "";
+  return (image.properties?.src as string) || '';
 };
 
 const copy = async (source: string, sha256sum: string, target: string) => {
@@ -50,7 +53,11 @@ const copy = async (source: string, sha256sum: string, target: string) => {
   }
 };
 
-const metadata = async (resourcePath: string, source: string, pathname: string) => {
+const metadata = async (
+  resourcePath: string,
+  source: string,
+  pathname: string,
+) => {
   const content = await fs.readFile(source);
   const image = sharp(content);
 
@@ -60,7 +67,7 @@ const metadata = async (resourcePath: string, source: string, pathname: string) 
     return null;
   }
 
-  const src = resourcePath + "/" + pathname;
+  const src = resourcePath + '/' + pathname;
 
   const sha256 = checksum(content);
 
@@ -76,7 +83,11 @@ const metadata = async (resourcePath: string, source: string, pathname: string) 
   };
 };
 
-const processImage = async (options: Options, file: VFileWithOutput<unknown>, node: Element): Promise<void> => {
+const processImage = async (
+  options: Options,
+  file: VFileWithOutput<unknown>,
+  node: Element,
+): Promise<void> => {
   const root = findRoot(file);
 
   const pathname = findPath(file, node);
@@ -102,36 +113,44 @@ const processImage = async (options: Options, file: VFileWithOutput<unknown>, no
 interface Options {
   publicDir: string;
   resourcePath: string;
-};
+}
 
 /* eslint-disable */
-const staticImages: Plugin<[Options], Root> = (options) => (tree: any, file: VFile, done: () => any) => {
-  const tasks: Promise<void>[] = [];
+const staticImages: Plugin<[Options], Root> =
+  (options) => (tree: any, file: VFile, done: () => any) => {
+    const tasks: Promise<void>[] = [];
 
-  visit(tree, "element", (node) => {
-    if (node.tagName === "img") {
-      tasks.push(processImage(options, file, node));
-    }
-  });
+    visit(tree, 'element', (node) => {
+      if (node.tagName === 'img') {
+        tasks.push(processImage(options, file, node));
+      }
+    });
 
-  Promise.all(tasks).then(() => done()).catch((error) => console.error(error));
-};
+    Promise.all(tasks)
+      .then(() => done())
+      .catch((error) => console.error(error));
+  };
 /* eslint-enable */
 
 export const staticCoverImage = async (post: Blog) => {
   const image = post.banner;
-  if (image.includes("://")) {
+  if (image.includes('://')) {
     return image;
   }
 
-  const source = path.join("src/content", "blogs", post._raw.sourceFileDir, image);
+  const source = path.join(
+    'src/content',
+    'blogs',
+    post._raw.sourceFileDir,
+    image,
+  );
   const content = await fs.readFile(source);
   const sha256sum = checksum(content);
-  const target = path.join("public", "blogs", post._raw.sourceFileDir, image);
+  const target = path.join('public', 'blogs', post._raw.sourceFileDir, image);
 
   await copy(source, sha256sum, target);
 
-  return path.join("/", "blogs", post._raw.sourceFileDir, image);
+  return path.join('/', 'blogs', post._raw.sourceFileDir, image);
 };
 
 export default staticImages;

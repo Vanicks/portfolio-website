@@ -63,4 +63,4 @@ export interface FavAnimeInfo {
   progress: number;
   siteUrl: string;
   title: string;
-};
+}

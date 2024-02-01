@@ -10,16 +10,18 @@ export default function TechStack() {
         <p className="text-[#1e2024] dark:text-[#dadde7] text-leading-6 text-lg tracking-wide">
           I use a variety of tools to streamline my development process and
           increase the quality of both my code, and my projects. Below is a list
-          of technologies and languages I&apos;ve had experience with in the past, or
-          use currently.
+          of technologies and languages I&apos;ve had experience with in the
+          past, or use currently.
         </p>
       </div>
       {/* <div className="grid grid-cols-2 gap-2 sm:grid-cols-5">
         <TeachIcons />
       </div> */}
-      <div className='pt-3 md:pt-5'>
-        <p className='text-lg md:text-xl font-semibold'>Favorite Technologies</p>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mt-3'>
+      <div className="pt-3 md:pt-5">
+        <p className="text-lg md:text-xl font-semibold">
+          Favorite Technologies
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
           <FavTechIcons />
         </div>
       </div>

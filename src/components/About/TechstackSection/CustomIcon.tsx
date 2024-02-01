@@ -1,5 +1,5 @@
 // custom-icon.tsx
-import type { IconBaseProps,IconType } from "react-icons";
+import type { IconBaseProps, IconType } from 'react-icons';
 
 interface CustomIconProps extends IconBaseProps {
   icon: IconType;

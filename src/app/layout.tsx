@@ -1,19 +1,21 @@
 import '@/styles/globals.css';
 
 import { Inter } from 'next/font/google';
-import type { Metadata } from 'next';
 
+import AnalyticsWrapper from '@/components/AnalyticsWrapper';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { meta } from '@/lib/config';
 
-import AnalyticsWrapper from '@/components/AnalyticsWrapper';
+import type { Metadata } from 'next';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_VERCEL_URL ?? 'https://localhost:3000'),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_VERCEL_URL ?? 'https://localhost:3000',
+  ),
   title: {
     default: meta.title,
     template: '%s | ' + meta.title,

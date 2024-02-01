@@ -64,4 +64,4 @@ export default function NewNav() {
 interface NavItemsLeft {
   title: string;
   href: string;
-};
+}
