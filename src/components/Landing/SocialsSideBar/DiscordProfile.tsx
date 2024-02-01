@@ -67,7 +67,7 @@ export default function DiscordActivity() {
   };
 
   return (
-    <Card className="w-full">
+    <Card className="bg-background w-full">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
         <CardTitle className="text-sm font-medium">Discord activity</CardTitle>
       </CardHeader>
