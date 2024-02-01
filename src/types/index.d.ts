@@ -31,7 +31,7 @@ type DiscordApiContent = {
   };
   discord_user: DiscordUser;
   activities: Activity[];
-  discord_status: string;
+  discord_status: Status;
 } & DiscordKeyString;
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions, @typescript-eslint/consistent-indexed-object-style
