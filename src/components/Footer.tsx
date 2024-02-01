@@ -62,9 +62,9 @@ interface FooterItems {
   title: string;
   href: string;
   target?: string;
-};
+}
 
 interface FooterCategory {
   title: string;
   links: FooterItems[];
-};
+}

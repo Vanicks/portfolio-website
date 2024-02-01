@@ -25,7 +25,7 @@ export const meta = {
     instagram: {
       username: 'its_kaskus',
     },
-    email: 'paulandrew103@proton.me'
+    email: 'paulandrew103@proton.me',
   },
 };
 

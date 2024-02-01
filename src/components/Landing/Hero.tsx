@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
-import Socials from './HeroSection/Socials';
 import { meta } from '@/lib/config';
+import Socials from './HeroSection/Socials';
 
 export default function Hero() {
   return (
@@ -23,8 +23,9 @@ export default function Hero() {
             playing Roblox, with BRM5 as my preferred game.
           </p>
           <p>
-            Feel free to contact me for any reason, even if it&apos;s just to chat.
-            You can contact me through Discord or send an email to {meta.accounts.email}.
+            Feel free to contact me for any reason, even if it&apos;s just to
+            chat. You can contact me through Discord or send an email to{' '}
+            {meta.accounts.email}.
           </p>
         </div>
         <div className="flex flex-col gap-2">

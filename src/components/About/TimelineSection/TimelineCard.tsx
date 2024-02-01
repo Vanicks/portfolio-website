@@ -40,8 +40,12 @@ export default function TimelineCard({
                 </span>
               )}
             </h3>
-            <h3 className="font-medium text-md text-[#4c515d] dark:text-[#c2c9d9]">{company}</h3>
-            <h4 className="text-sm font-medium text-[#616973] dark:text-[##b3b7bb]">{timespan}</h4>
+            <h3 className="font-medium text-md text-[#4c515d] dark:text-[#c2c9d9]">
+              {company}
+            </h3>
+            <h4 className="text-sm font-medium text-[#616973] dark:text-[##b3b7bb]">
+              {timespan}
+            </h4>
           </div>
         </div>
         <p className="mb-4 text-base font-normal text-muted-foreground">
@@ -59,4 +63,4 @@ interface Props {
   current: boolean;
   icon: string;
   company: string;
-};
+}

@@ -1,6 +1,6 @@
 'use client';
 
-import Link, { type LinkProps } from 'next/link';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
@@ -10,6 +10,8 @@ import { Button } from '../ui/button';
 import { ScrollArea } from '../ui/scroll-area';
 import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet';
 import Logo from './Logo';
+
+import type { LinkProps } from 'next/link';
 
 function MobileLink({
   href,

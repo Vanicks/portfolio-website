@@ -51,4 +51,4 @@ interface Project {
   url: string;
   starGazerCount: number;
   forkCount: number;
-};
+}
