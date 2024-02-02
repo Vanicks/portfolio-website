@@ -55,6 +55,12 @@ module.exports = bundleWithAnalyzer(
         },
         {
           protocol: 'https',
+          hostname: '**.discordapp.com',
+          port: '',
+          pathname: '/**',
+        },
+        {
+          protocol: 'https',
           hostname: '**.scdn.co',
           port: '',
           pathname: '/**',

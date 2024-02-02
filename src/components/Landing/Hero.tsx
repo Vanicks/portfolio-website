@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { meta } from '@/lib/config';
 import Socials from './HeroSection/Socials';
@@ -18,14 +19,12 @@ export default function Hero() {
             field of backend development and cybersecurity.
           </p>
           <p>
-            Aside from programming, I enjoy traveling and watching anime, with
-            favorites like One Piece and Attack on Titan. I&apos;m also a fan of
-            playing Roblox, with BRM5 as my preferred game.
+            I build backend stuff using <span className='text-green-600'>Node.js</span>, <span className='text-yellow-400'>JavaScript</span>, <span className='text-blue-700'>TypeScript</span>, 
+            and Python. I&apos;m familiar with databases like <span className='text-blue-300 '>SQLite</span> and <span className='text-[#4db33d]'>MongoDB</span>.
           </p>
           <p>
             Feel free to contact me for any reason, even if it&apos;s just to
-            chat. You can contact me through Discord or send an email to{' '}
-            {meta.accounts.email}.
+            chat. You can contact me through Discord or send an email to <Link href={`mailto:${meta.accounts.email}`}>{meta.accounts.email}</Link>.
           </p>
         </div>
         <div className="flex flex-col gap-2">

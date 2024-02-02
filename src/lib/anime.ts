@@ -38,6 +38,7 @@ async function getAnimeInfo(): Promise<FavAnimeInfo[]> {
         progress: animeList[index].progress,
         siteUrl: data.value.siteUrl,
         title: data.value.title.english,
+        episodes: data.value.episodes,
       };
     } else {
       console.warn(`Missing or invalid data for anime: ${animeList[index].id}`);
@@ -47,6 +48,7 @@ async function getAnimeInfo(): Promise<FavAnimeInfo[]> {
         progress: 0,
         siteUrl: 'https://anilist.co/',
         title: 'Undefined',
+        episodes: null,
       };
     }
   });
@@ -63,4 +65,5 @@ export interface FavAnimeInfo {
   progress: number;
   siteUrl: string;
   title: string;
+  episodes: number | null;
 }
