@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
+import { Progress } from "@/components/ui/progress";
 import { type FavAnimeInfo } from '@/lib/anime';
 
 export default function WatchListCard({
@@ -13,19 +14,23 @@ export default function WatchListCard({
     <>
       <Link href={animeInfo.siteUrl} target="_blank">
         <article className="book-item rounded relative group">
-          <div className="z-2 rounded outline outline-1 outline-body-600 group-hover:-translate-y-6 transition-250 overflow-hidden group-hover:shadow-xl">
+          <div className="z-2 rounded outline outline-1 outline-[#f3f4f7] dark:outline-[#12151c] group-hover:-translate-y-6 transition-250 overflow-hidden group-hover:shadow-xl">
             <Image
               src={animeInfo.coverImage}
               alt="Anime cover image for current watchlist"
-              sizes=""
               loading="lazy"
               width={500}
               height={750}
-              decoding="async"
-              className="z-2 w-full h-full object-cover aspect-[2/3] opacity-100 outline outline-1 outline-body-800"
+              decoding="async"className="z-2 w-full h-full object-cover aspect-[2/3] opacity-100 outline outline-1 outline-[#f3f4f7] dark:outline-[#12151c]"
             />
-            <div className="opacity-0 group-hover:opacity-100 duration-300 absolute left-0 bottom-0 right-0 z-10 flex justify-center items-end text-sm bg-gray-200 text-black font-semibold">
-              {animeInfo.title}
+            <Progress 
+              className='border-none w-full h-[3px] absolute bottom-0'
+              value={(animeInfo.progress / (!animeInfo.episodes ? 0 : Number(animeInfo.episodes))) * 100} 
+            />
+            <div className="opacity-0 group-hover:opacity-100 h-full duration-300 absolute left-0 bottom-0 right-0 z-10 flex justify-center items-center text-sm bg-black/40 text-white font-semibold">
+              <p className='text-center text-white'>
+                {animeInfo.title}
+              </p>
             </div>
           </div>
           <div className="z-0 flex text-sm w-full color-text-400 justify-between items-baseline absolute opacity-0 bottom-0 transition-300 ease-in-out group-hover:opacity-100">
