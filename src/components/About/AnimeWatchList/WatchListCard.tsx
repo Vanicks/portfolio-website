@@ -21,7 +21,8 @@ export default function WatchListCard({
               loading="lazy"
               width={500}
               height={750}
-              decoding="async"className="z-2 w-full h-full object-cover aspect-[2/3] opacity-100 outline outline-1 outline-[#f3f4f7] dark:outline-[#12151c]"
+              decoding="async"
+              className="z-2 w-full h-full object-cover aspect-[2/3] opacity-100 outline outline-1 outline-[#f3f4f7] dark:outline-[#12151c]"
             />
             <Progress 
               className='border-none w-full h-[3px] absolute bottom-0'
