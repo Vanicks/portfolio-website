@@ -32,7 +32,7 @@ export default function RepoCard({ project }: { project: Project }) {
         <div className="flex gap-2 mt-3 cursor-default">
           {project.tags.map((tag: string, index: number) => (
             <Badge
-              className="rounded-3xl px-2 text-sm overflow-hidden truncate"
+              className="rounded-md px-2 text-sm overflow-hidden truncate"
               key={index}>
               {tag}
             </Badge>
