@@ -12,7 +12,7 @@ export default async function AnimeWatchList() {
           My Anime Watch List
         </h2>
       </div>
-      <div className="grid gap-4 book-grid">
+      <div className="grid gap-4 watchlist-grid">
         {favAnimeCoverImages.map(
           (favAnimeInfo: FavAnimeInfo, index: number) => {
             return <WatchListCard animeInfo={favAnimeInfo} key={index} />;

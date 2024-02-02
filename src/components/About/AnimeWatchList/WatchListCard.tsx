@@ -13,7 +13,7 @@ export default function WatchListCard({
   return (
     <>
       <Link href={animeInfo.siteUrl} target="_blank">
-        <article className="book-item rounded relative group">
+        <article className="watchlist-item rounded relative group">
           <div className="z-2 rounded outline outline-1 outline-[#f3f4f7] dark:outline-[#12151c] group-hover:-translate-y-6 transition-250 overflow-hidden group-hover:shadow-xl">
             <Image
               src={animeInfo.coverImage}

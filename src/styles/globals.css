@@ -70,15 +70,15 @@
   display: block;
 }
 
-.book-grid {
+.watchlist-grid {
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
 }
 
-.book-grid .book-item {
+.watchlist-grid .watchlist-item {
   transition: all 0.2s ease-in-out;
   opacity: 1;
 }
-.book-grid .book-item:hover {
+.watchlist-grid .watchlist-item:hover {
   opacity: 1;
 }
 
