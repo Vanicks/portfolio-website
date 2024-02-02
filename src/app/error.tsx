@@ -15,5 +15,5 @@ export default function Error({ error }: { error: Error }) {
         </div>
       </div>
     </main>
-  )
+  );
 }
