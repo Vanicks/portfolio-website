@@ -18,14 +18,12 @@ export default function Hero() {
             field of backend development and cybersecurity.
           </p>
           <p>
-            Aside from programming, I enjoy traveling and watching anime, with
-            favorites like One Piece and Attack on Titan. I&apos;m also a fan of
-            playing Roblox, with BRM5 as my preferred game.
+            I build full-stack stuff™ using Node.js, JavaScript, TypeScript, 
+            and Python. I'm familiar with databases like SQLite and MongoDB.
           </p>
           <p>
             Feel free to contact me for any reason, even if it&apos;s just to
-            chat. You can contact me through Discord or send an email to{' '}
-            {meta.accounts.email}.
+            chat. You can contact me through Discord or send an email to {meta.accounts.email}.
           </p>
         </div>
         <div className="flex flex-col gap-2">
