@@ -5,19 +5,19 @@ import RepoCard from './FeaturedProjects/RepoCard';
 
 const projects = [
   {
-    name: 'Saber-Chan',
-    description: 'An advance discord-bot made with typescript and sapphirejs',
-    tags: ['sapphirejs', 'typescript', 'discord-bot'],
-    repoLink: 'https://github.com/NotKaskus/saber-chan',
-    url: 'https://saber-chan.com',
+    name: 'typescript-template',
+    description: 'A project template for all my projects that use typescript',
+    tags: ['nodejs', 'typescript'],
+    repoLink: 'https://github.com/NotKaskus/typescript-template',
+    url: 'https://github.com/NotKaskus/typescript-template',
     starGazerCount: 0,
     forkCount: 0,
   },
   {
-    name: 'notkaskus.github.io',
-    description: 'My personal website made iwht nextjs and tailwindcss',
+    name: 'portfolio-website',
+    description: 'My personal website made with nextjs and tailwindcss',
     tags: ['nextjs', 'tailwindcss', 'typescript'],
-    repoLink: 'https://github.com/NotKaskus/notkaskus.github.io',
+    repoLink: 'https://github.com/NotKaskus/portfolio-website',
     url: 'https://paul.is-a.dev',
     starGazerCount: 0,
     forkCount: 0,
