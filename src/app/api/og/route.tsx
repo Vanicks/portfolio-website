@@ -59,7 +59,7 @@ export function GET(req: NextRequest) {
               {meta.author}
             </p>
             <img
-              src={`/avatar.webp`}
+              src={`${process.env.NEXT_PUBLIC_VERCEL_URL}/avatar.webp`}
               alt={meta.siteName}
               style={{
                 width: '5em',
