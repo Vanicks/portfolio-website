@@ -9,6 +9,7 @@ import PostHeader from '@/components/Blogs/Blog/PostHeader';
 import type { Blog } from 'contentlayer/generated';
 import type { MDXComponents } from 'mdx/types';
 import type { Metadata } from 'next';
+import TwitterCTA from '@/components/Blogs/Blog/TwitterCTA';
 
 export function generateMetadata({ params }: BlogPageParams): Metadata {
   const blog = getBlogFromParams(params.slug);
@@ -70,7 +71,9 @@ export default function BlogPage({ params }: BlogPageParams) {
       </main>
       <div className="w-full h-full relative">
         <hr className="mt-2 mb-2 border-top-1 w-full h-[1px] bg-[#f3f4f7] col-span-full transition-all" />
-        <div className="article-grid relative z-2 py-12"></div>
+        <div className="article-grid relative z-2 py-12">
+          <TwitterCTA className="z-2" />
+        </div>
         <div className="overlay rotate-180 z-0"></div>
       </div>
     </article>
