@@ -16,13 +16,13 @@ export default function TwitterCTA({ className }: { className: string }) {
             <p className="max-w-2xl text-lg dark:text-muted-foreground text-wrap-balance">Feel free to follow or reach out to me on Twitter or X whatever yo call it.</p>
           </div>
           <div className="flex-1 space-y-4">
-            <a href={link} target="_blank" rel="noreferrer noopener" className="external-link bg-[#fcfcfd] rounded-full text-xl font-medium w-full flex justify-center items-center whitespace-nowrap h-fit py-2 px-6 outline-1 outline outline-[#e9ebf1] dark:outline-[#181b25] transition-transform -hover:translate-y-1 decoration-none">
+            <a href={link} target="_blank" rel="noreferrer noopener" className="external-link bg-[#fcfcfd] dark:bg-[#0e1016] rounded-xl text-xl font-medium w-full flex justify-center items-center whitespace-nowrap h-fit py-2 px-6 outline-1 outline outline-[#e9ebf1] dark:outline-[#181b25] transition-transform -hover:translate-y-1 decoration-none">
               <RiTwitterFill className="me-4 text-primary" />
               <span className="text-primary">
                 Follow Me
               </span>
             </a>
-            <a href={link} target="_blank" rel="noreferrer noopener" className="external-link bg-[#fcfcfd] rounded-full text-xl font-medium w-full flex justify-center items-center whitespace-nowrap h-fit py-2 px-6 outline-1 outline outline-[#e9ebf1] dark:outline-[#181b25] transition-transform -hover:translate-y-1 decoration-none"> {/** TODO: Change this twitter tweet the post link */}
+            <a href={link} target="_blank" rel="noreferrer noopener" className="external-link bg-[#fcfcfd] dark:bg-[#0e1016] rounded-xl text-xl font-medium w-full flex justify-center items-center whitespace-nowrap h-fit py-2 px-6 outline-1 outline outline-[#e9ebf1] dark:outline-[#181b25] transition-transform -hover:translate-y-1 decoration-none"> {/** TODO: Change this twitter tweet the post link */}
               <RiTwitterFill className="me-4 text-primary" />
               <span className="text-primary">
                 Tweet this post
