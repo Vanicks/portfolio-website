@@ -106,8 +106,8 @@ export const footer = {
       title: 'Other',
       links: [
         {
-          title: 'What i use',
-          href: '/uses',
+          title: 'About me',
+          href: '/about',
         },
         {
           title: 'Contact',
