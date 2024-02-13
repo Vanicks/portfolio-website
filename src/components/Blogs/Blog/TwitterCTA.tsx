@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import { meta } from "@/lib/config";
 
 const TWITTER_HANDLE = meta.accounts.twitter.username;
-const link = `https://twitter.com/intent/follow?screen_name=${TWITTER_HANDLE}&twterm=follow`
+const link = `https://twitter.com/intent/follow?screen_name=${TWITTER_HANDLE}&twterm=follow`;
 
 export default function TwitterCTA({ className }: { className: string }) {
   return (
@@ -32,5 +32,5 @@ export default function TwitterCTA({ className }: { className: string }) {
         </div>
       }
     </>
-  )
+  );
 }
