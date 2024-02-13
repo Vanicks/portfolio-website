@@ -28,7 +28,7 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "@t3-oss/env-nextjs": "^0.8.0",
     "@vercel/analytics": "^1.1.2",
-    "anilist-node": "github:NotKaskus/AniList-Node",
+    "anilist-node": "git@github.com:NotKaskus/AniList-Node.git",
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
     "clsx": "^2.1.0",

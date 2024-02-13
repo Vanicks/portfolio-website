@@ -44,3 +44,7 @@ next-env.d.ts
 
 # Nextjs Bundle Analyzer
 /analyze
+
+# Build Sitemap Assets
+/public/sitemap.xml
+/public/sitemap-0.xml
